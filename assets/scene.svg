@@ -101,54 +101,31 @@
     <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
 
-  <!-- Animated RGB Spectrum Side Gradients -->
-  <linearGradient id="rgbFlowL" x1="0" y1="0%" x2="0" y2="100%">
-    <stop offset="0%" stop-color="#FF0044">
-      <animate attributeName="stop-color" values="#FF0044;#FF7700;#FFEE00;#00FF66;#00FFFF;#0066FF;#AA00FF;#FF0044" dur="5s" repeatCount="indefinite"/>
+  <!-- Retrowave Electric Neon Edge Lighting (Cyan, Purple & Hot Magenta) -->
+  <linearGradient id="neonGlowL" x1="0" y1="0%" x2="0" y2="100%">
+    <stop offset="0%" stop-color="#00F0FF">
+      <animate attributeName="stop-color" values="#00F0FF;#A100FF;#FF00AA;#00F0FF" dur="5s" repeatCount="indefinite"/>
     </stop>
-    <stop offset="16%" stop-color="#FF7700">
-      <animate attributeName="stop-color" values="#FF7700;#FFEE00;#00FF66;#00FFFF;#0066FF;#AA00FF;#FF0044;#FF7700" dur="5s" repeatCount="indefinite"/>
+    <stop offset="50%" stop-color="#A100FF">
+      <animate attributeName="stop-color" values="#A100FF;#FF00AA;#00F0FF;#A100FF" dur="5s" repeatCount="indefinite"/>
     </stop>
-    <stop offset="33%" stop-color="#FFEE00">
-      <animate attributeName="stop-color" values="#FFEE00;#00FF66;#00FFFF;#0066FF;#AA00FF;#FF0044;#FF7700;#FFEE00" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="50%" stop-color="#00FF66">
-      <animate attributeName="stop-color" values="#00FF66;#00FFFF;#0066FF;#AA00FF;#FF0044;#FF7700;#FFEE00;#00FF66" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="66%" stop-color="#00FFFF">
-      <animate attributeName="stop-color" values="#00FFFF;#0066FF;#AA00FF;#FF0044;#FF7700;#FFEE00;#00FF66;#00FFFF" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="83%" stop-color="#0066FF">
-      <animate attributeName="stop-color" values="#0066FF;#AA00FF;#FF0044;#FF7700;#FFEE00;#00FF66;#00FFFF;#0066FF" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="100%" stop-color="#AA00FF">
-      <animate attributeName="stop-color" values="#AA00FF;#FF0044;#FF7700;#FFEE00;#00FF66;#00FFFF;#0066FF;#AA00FF" dur="5s" repeatCount="indefinite"/>
+    <stop offset="100%" stop-color="#FF00AA">
+      <animate attributeName="stop-color" values="#FF00AA;#00F0FF;#A100FF;#FF00AA" dur="5s" repeatCount="indefinite"/>
     </stop>
   </linearGradient>
 
-  <linearGradient id="rgbFlowR" x1="0" y1="100%" x2="0" y2="0%">
-    <stop offset="0%" stop-color="#FF0044">
-      <animate attributeName="stop-color" values="#FF0044;#FF7700;#FFEE00;#00FF66;#00FFFF;#0066FF;#AA00FF;#FF0044" dur="5s" repeatCount="indefinite"/>
+  <linearGradient id="neonGlowR" x1="0" y1="100%" x2="0" y2="0%">
+    <stop offset="0%" stop-color="#FF00AA">
+      <animate attributeName="stop-color" values="#FF00AA;#00F0FF;#A100FF;#FF00AA" dur="5s" repeatCount="indefinite"/>
     </stop>
-    <stop offset="16%" stop-color="#FF7700">
-      <animate attributeName="stop-color" values="#FF7700;#FFEE00;#00FF66;#00FFFF;#0066FF;#AA00FF;#FF0044;#FF7700" dur="5s" repeatCount="indefinite"/>
+    <stop offset="50%" stop-color="#A100FF">
+      <animate attributeName="stop-color" values="#A100FF;#FF00AA;#00F0FF;#A100FF" dur="5s" repeatCount="indefinite"/>
     </stop>
-    <stop offset="33%" stop-color="#FFEE00">
-      <animate attributeName="stop-color" values="#FFEE00;#00FF66;#00FFFF;#0066FF;#AA00FF;#FF0044;#FF7700;#FFEE00" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="50%" stop-color="#00FF66">
-      <animate attributeName="stop-color" values="#00FF66;#00FFFF;#0066FF;#AA00FF;#FF0044;#FF7700;#FFEE00;#00FF66" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="66%" stop-color="#00FFFF">
-      <animate attributeName="stop-color" values="#00FFFF;#0066FF;#AA00FF;#FF0044;#FF7700;#FFEE00;#00FF66;#00FFFF" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="83%" stop-color="#0066FF">
-      <animate attributeName="stop-color" values="#0066FF;#AA00FF;#FF0044;#FF7700;#FFEE00;#00FF66;#00FFFF;#0066FF" dur="5s" repeatCount="indefinite"/>
-    </stop>
-    <stop offset="100%" stop-color="#AA00FF">
-      <animate attributeName="stop-color" values="#AA00FF;#FF0044;#FF7700;#FFEE00;#00FF66;#00FFFF;#0066FF;#AA00FF" dur="5s" repeatCount="indefinite"/>
+    <stop offset="100%" stop-color="#00F0FF">
+      <animate attributeName="stop-color" values="#00F0FF;#A100FF;#FF00AA;#00F0FF" dur="5s" repeatCount="indefinite"/>
     </stop>
   </linearGradient>
+
 
   <!-- Side RGB ambient fade masks -->
   <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0">
@@ -516,54 +493,64 @@
   <animate attributeName="opacity" values="1;0;1;0;1" dur="1s" begin="2.8s" repeatCount="indefinite"/>
 </rect>
 
-<!-- ═══════════ DYNAMIC RGB SIDE EFFECTS (GAMING / CYBER EDGE LIGHTING) ═══════════ -->
+<!-- ═══════════ RETROWAVE NEON SIDE LIGHTING (CYAN & MAGENTA NEON TUBES) ═══════════ -->
 
-<!-- Soft Diffuse Ambient RGB Glow (Left & Right) -->
-<g opacity="0.45">
-  <rect x="0" y="0" width="80" height="520" fill="url(#rgbFlowL)" mask="url(#maskFadeL)" filter="url(#f3)"/>
-  <rect x="820" y="0" width="80" height="520" fill="url(#rgbFlowR)" mask="url(#maskFadeR)" filter="url(#f3)"/>
+<!-- Soft Diffuse Ambient Neon Glow (Left & Right) -->
+<g opacity="0.38">
+  <rect x="0" y="0" width="70" height="520" fill="url(#neonGlowL)" mask="url(#maskFadeL)" filter="url(#f3)"/>
+  <rect x="830" y="0" width="70" height="520" fill="url(#neonGlowR)" mask="url(#maskFadeR)" filter="url(#f3)"/>
 </g>
 
-<!-- Mid Ambient Glow Line (Left & Right) -->
-<line x1="1" y1="0" x2="1" y2="520" stroke="url(#rgbFlowL)" stroke-width="12" opacity="0.35" filter="url(#f2)"/>
-<line x1="899" y1="0" x2="899" y2="520" stroke="url(#rgbFlowR)" stroke-width="12" opacity="0.35" filter="url(#f2)"/>
+<!-- Outer Neon Aura (Left & Right) -->
+<line x1="1" y1="0" x2="1" y2="520" stroke="url(#neonGlowL)" stroke-width="8" opacity="0.45" filter="url(#f2)"/>
+<line x1="899" y1="0" x2="899" y2="520" stroke="url(#neonGlowR)" stroke-width="8" opacity="0.45" filter="url(#f2)"/>
 
-<!-- Sharp RGB Neon Light Pillars (Left & Right Edges) -->
-<rect x="0" y="0" width="3.5" height="520" fill="url(#rgbFlowL)" filter="url(#f1)"/>
-<line x1="0.5" y1="0" x2="0.5" y2="520" stroke="#FFFFFF" stroke-width="1" opacity="0.85"/>
+<!-- Sharp Vivid Neon Tube (Left & Right) -->
+<line x1="1" y1="0" x2="1" y2="520" stroke="url(#neonGlowL)" stroke-width="3" opacity="0.85" filter="url(#f1)">
+  <animate attributeName="opacity" values="0.85;0.95;0.78;0.95;0.82;1;0.85" dur="3.5s" repeatCount="indefinite"/>
+</line>
+<line x1="899" y1="0" x2="899" y2="520" stroke="url(#neonGlowR)" stroke-width="3" opacity="0.85" filter="url(#f1)">
+  <animate attributeName="opacity" values="0.85;1;0.82;0.95;0.78;0.95;0.85" dur="3.5s" repeatCount="indefinite"/>
+</line>
 
-<rect x="896.5" y="0" width="3.5" height="520" fill="url(#rgbFlowR)" filter="url(#f1)"/>
-<line x1="899.5" y1="0" x2="899.5" y2="520" stroke="#FFFFFF" stroke-width="1" opacity="0.85"/>
+<!-- High-Voltage White Neon Filament Core (Left & Right) -->
+<line x1="1" y1="0" x2="1" y2="520" stroke="#FFFFFF" stroke-width="1.2" opacity="0.9">
+  <animate attributeName="opacity" values="0.9;0.98;0.82;0.98;0.88;1;0.9" dur="3.5s" repeatCount="indefinite"/>
+</line>
+<line x1="899" y1="0" x2="899" y2="520" stroke="#FFFFFF" stroke-width="1.2" opacity="0.9">
+  <animate attributeName="opacity" values="0.9;1;0.88;0.98;0.82;0.98;0.9" dur="3.5s" repeatCount="indefinite"/>
+</line>
 
-<!-- Cyber HUD RGB Edge Ticks (Left & Right) -->
+<!-- Cyber HUD Neon Edge Ticks (Left & Right) -->
 <g stroke-width="1.5" stroke-linecap="round" opacity="0.85">
   <!-- Left Side Ticks -->
-  <line x1="0" y1="60"  x2="8" y2="60"  stroke="url(#rgbFlowL)"/>
-  <line x1="0" y1="120" x2="6" y2="120" stroke="url(#rgbFlowL)"/>
-  <line x1="0" y1="180" x2="10" y2="180" stroke="url(#rgbFlowL)"/>
-  <line x1="0" y1="240" x2="6" y2="240" stroke="url(#rgbFlowL)"/>
-  <line x1="0" y1="300" x2="12" y2="300" stroke="url(#rgbFlowL)"/>
-  <line x1="0" y1="360" x2="6" y2="360" stroke="url(#rgbFlowL)"/>
-  <line x1="0" y1="420" x2="10" y2="420" stroke="url(#rgbFlowL)"/>
-  <line x1="0" y1="480" x2="8" y2="480" stroke="url(#rgbFlowL)"/>
+  <line x1="0" y1="60"  x2="8" y2="60"  stroke="url(#neonGlowL)"/>
+  <line x1="0" y1="120" x2="6" y2="120" stroke="url(#neonGlowL)"/>
+  <line x1="0" y1="180" x2="10" y2="180" stroke="url(#neonGlowL)"/>
+  <line x1="0" y1="240" x2="6" y2="240" stroke="url(#neonGlowL)"/>
+  <line x1="0" y1="300" x2="12" y2="300" stroke="url(#neonGlowL)"/>
+  <line x1="0" y1="360" x2="6" y2="360" stroke="url(#neonGlowL)"/>
+  <line x1="0" y1="420" x2="10" y2="420" stroke="url(#neonGlowL)"/>
+  <line x1="0" y1="480" x2="8" y2="480" stroke="url(#neonGlowL)"/>
 
   <!-- Right Side Ticks -->
-  <line x1="900" y1="60"  x2="892" y2="60"  stroke="url(#rgbFlowR)"/>
-  <line x1="900" y1="120" x2="894" y2="120" stroke="url(#rgbFlowR)"/>
-  <line x1="900" y1="180" x2="890" y2="180" stroke="url(#rgbFlowR)"/>
-  <line x1="900" y1="240" x2="894" y2="240" stroke="url(#rgbFlowR)"/>
-  <line x1="900" y1="300" x2="888" y2="300" stroke="url(#rgbFlowR)"/>
-  <line x1="900" y1="360" x2="894" y2="360" stroke="url(#rgbFlowR)"/>
-  <line x1="900" y1="420" x2="890" y2="420" stroke="url(#rgbFlowR)"/>
-  <line x1="900" y1="480" x2="892" y2="480" stroke="url(#rgbFlowR)"/>
+  <line x1="900" y1="60"  x2="892" y2="60"  stroke="url(#neonGlowR)"/>
+  <line x1="900" y1="120" x2="894" y2="120" stroke="url(#neonGlowR)"/>
+  <line x1="900" y1="180" x2="890" y2="180" stroke="url(#neonGlowR)"/>
+  <line x1="900" y1="240" x2="894" y2="240" stroke="url(#neonGlowR)"/>
+  <line x1="900" y1="300" x2="888" y2="300" stroke="url(#neonGlowR)"/>
+  <line x1="900" y1="360" x2="894" y2="360" stroke="url(#neonGlowR)"/>
+  <line x1="900" y1="420" x2="890" y2="420" stroke="url(#neonGlowR)"/>
+  <line x1="900" y1="480" x2="892" y2="480" stroke="url(#neonGlowR)"/>
 </g>
 
-<!-- Corner Cyber RGB Brackets -->
+<!-- Corner Cyber Neon Brackets -->
 <g stroke-width="2" fill="none" opacity="0.9">
-  <path d="M 0,20 L 0,0 L 20,0" stroke="url(#rgbFlowL)"/>
-  <path d="M 0,500 L 0,520 L 20,520" stroke="url(#rgbFlowL)"/>
-  <path d="M 900,20 L 900,0 L 880,0" stroke="url(#rgbFlowR)"/>
-  <path d="M 900,500 L 900,520 L 880,520" stroke="url(#rgbFlowR)"/>
+  <path d="M 0,20 L 0,0 L 20,0" stroke="url(#neonGlowL)"/>
+  <path d="M 0,500 L 0,520 L 20,520" stroke="url(#neonGlowL)"/>
+  <path d="M 900,20 L 900,0 L 880,0" stroke="url(#neonGlowR)"/>
+  <path d="M 900,500 L 900,520 L 880,520" stroke="url(#neonGlowR)"/>
 </g>
 
 </svg>
+
