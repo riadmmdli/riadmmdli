@@ -101,6 +101,34 @@
     <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
 
+  <!-- Neon Building Window Patterns -->
+  <pattern id="winCyan" width="5" height="7" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1" width="2.5" height="3.5" rx="0.5" fill="#00F0FF" opacity="0.85"/>
+  </pattern>
+  <pattern id="winWarm" width="6" height="8" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1" width="3" height="4" rx="0.5" fill="#FFEAA7" opacity="0.88"/>
+  </pattern>
+  <pattern id="winPink" width="6" height="8" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1" width="2.5" height="3.5" rx="0.5" fill="#FF1493" opacity="0.85"/>
+  </pattern>
+  <pattern id="winDense" width="4" height="6" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1" width="1.8" height="2.5" rx="0.3" fill="#00FFFF" opacity="0.8"/>
+  </pattern>
+
+  <!-- Highway Road Surface Sheen & Reflective Bed -->
+  <linearGradient id="roadSurface" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#180036"/>
+    <stop offset="35%"  stop-color="#100026"/>
+    <stop offset="100%" stop-color="#050012"/>
+  </linearGradient>
+  <linearGradient id="roadLaneSheen" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#00F0FF" stop-opacity="0"/>
+    <stop offset="20%"  stop-color="#FF00AA" stop-opacity="0.15"/>
+    <stop offset="50%"  stop-color="#FF22CC" stop-opacity="0.28"/>
+    <stop offset="80%"  stop-color="#FF00AA" stop-opacity="0.15"/>
+    <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+  </linearGradient>
+
   <!-- Retrowave Electric Neon Edge Lighting (Cyan, Purple & Hot Magenta) -->
   <linearGradient id="neonGlowL" x1="0" y1="0%" x2="0" y2="100%">
     <stop offset="0%" stop-color="#00F0FF">
@@ -125,7 +153,6 @@
       <animate attributeName="stop-color" values="#00F0FF;#A100FF;#FF00AA;#00F0FF" dur="5s" repeatCount="indefinite"/>
     </stop>
   </linearGradient>
-
 
   <!-- Side RGB ambient fade masks -->
   <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0">
@@ -156,31 +183,95 @@
 <!-- ═══════════ SKY ═══════════ -->
 <rect width="900" height="520" fill="url(#sky)"/>
 
-<!-- Stars (Subtle twinkling night sky) -->
-<circle cx="45"  cy="16" r="1.2" fill="#FFF" opacity="0.65"><animate attributeName="opacity" values="0.65;0.1;0.65" dur="3.2s" repeatCount="indefinite"/></circle>
-<circle cx="102" cy="34" r="1"   fill="#FFF" opacity="0.5"><animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite"/></circle>
-<circle cx="158" cy="18" r="1.5" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.1;0.7" dur="4.1s" repeatCount="indefinite"/></circle>
-<circle cx="215" cy="52" r="1"   fill="#DDD" opacity="0.5"/>
-<circle cx="275" cy="25" r="1"   fill="#FFF" opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3.5s" repeatCount="indefinite"/></circle>
-<circle cx="332" cy="11" r="1"   fill="#FFF" opacity="0.4"/>
-<circle cx="392" cy="43" r="1.3" fill="#FFF" opacity="0.55"/>
-<circle cx="450" cy="22" r="1"   fill="#FFF" opacity="0.4"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.8s" repeatCount="indefinite"/></circle>
-<circle cx="512" cy="14" r="1.5" fill="#FFF" opacity="0.65"/>
-<circle cx="572" cy="40" r="1"   fill="#FFF" opacity="0.45"><animate attributeName="opacity" values="0.45;0.85;0.45" dur="3.0s" repeatCount="indefinite"/></circle>
-<circle cx="630" cy="20" r="1"   fill="#DDD" opacity="0.5"/>
-<circle cx="688" cy="10" r="1"   fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="4.4s" repeatCount="indefinite"/></circle>
-<circle cx="748" cy="36" r="1.5" fill="#FFF" opacity="0.5"/>
-<circle cx="808" cy="16" r="1"   fill="#FFF" opacity="0.6"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="3.3s" repeatCount="indefinite"/></circle>
-<circle cx="862" cy="46" r="1"   fill="#DDD" opacity="0.4"/>
-<circle cx="78"  cy="72" r="1"   fill="#FFF" opacity="0.3"/>
-<circle cx="185" cy="80" r="1"   fill="#FFF" opacity="0.35"><animate attributeName="opacity" values="0.35;0.7;0.35" dur="2.9s" repeatCount="indefinite"/></circle>
-<circle cx="360" cy="65" r="1"   fill="#FFF" opacity="0.3"/>
-<circle cx="495" cy="78" r="1.2" fill="#FFF" opacity="0.4"/>
-<circle cx="665" cy="68" r="1"   fill="#FFF" opacity="0.35"/>
-<circle cx="820" cy="60" r="1"   fill="#FFF" opacity="0.4"><animate attributeName="opacity" values="0.4;0.1;0.4" dur="3.6s" repeatCount="indefinite"/></circle>
-<circle cx="130" cy="55" r="1"   fill="#FFF" opacity="0.3"/>
-<circle cx="430" cy="58" r="1"   fill="#FFF" opacity="0.25"/>
-<circle cx="740" cy="60" r="1"   fill="#FFF" opacity="0.3"/>
+<!-- Sparkling Starfield (Varied twinkling stars & diamond flares) -->
+<g>
+  <!-- Diamond Sparkle Stars -->
+  <g transform="translate(155, 22)">
+    <polygon points="0,-6 1.4,-1.4 6,0 1.4,1.4 0,6 -1.4,1.4 -6,0 -1.4,-1.4" fill="#FFFFFF" filter="url(#f1)"/>
+    <circle cx="0" cy="0" r="1.5" fill="#00FFFF"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite"/>
+  </g>
+  <g transform="translate(290, 36)">
+    <polygon points="0,-5 1.2,-1.2 5,0 1.2,1.2 0,5 -1.2,1.2 -5,0 -1.2,-1.2" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="1.2" fill="#FF88EE"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3.1s" repeatCount="indefinite"/>
+  </g>
+  <g transform="translate(630, 24)">
+    <polygon points="0,-6 1.4,-1.4 6,0 1.4,1.4 0,6 -1.4,1.4 -6,0 -1.4,-1.4" fill="#FFFFFF" filter="url(#f1)"/>
+    <circle cx="0" cy="0" r="1.5" fill="#00FFFF"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2.8s" repeatCount="indefinite"/>
+  </g>
+  <g transform="translate(760, 38)">
+    <polygon points="0,-5 1.2,-1.2 5,0 1.2,1.2 0,5 -1.2,1.2 -5,0 -1.2,-1.2" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="1.3" fill="#DDF4FF"/>
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="3.6s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Left Upper Star Cluster -->
+  <circle cx="28"  cy="18"  r="1.2" fill="#FFF" opacity="0.75"><animate attributeName="opacity" values="0.75;0.2;0.75" dur="3.0s" repeatCount="indefinite"/></circle>
+  <circle cx="48"  cy="34"  r="1.5" fill="#E0F7FF" opacity="0.8"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="68"  cy="14"  r="0.9" fill="#FFF" opacity="0.6"/>
+  <circle cx="92"  cy="46"  r="1.3" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.15;0.7" dur="3.7s" repeatCount="indefinite"/></circle>
+  <circle cx="118" cy="22"  r="1.1" fill="#FFF" opacity="0.65"/>
+  <circle cx="138" cy="58"  r="0.8" fill="#DDD" opacity="0.5"/>
+  <circle cx="178" cy="38"  r="1.4" fill="#FFF" opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="4.2s" repeatCount="indefinite"/></circle>
+  <circle cx="202" cy="16"  r="1.0" fill="#E8F0FF" opacity="0.7"/>
+  <circle cx="225" cy="50"  r="1.2" fill="#FFF" opacity="0.65"><animate attributeName="opacity" values="0.65;0.95;0.65" dur="2.8s" repeatCount="indefinite"/></circle>
+  <circle cx="248" cy="28"  r="1.5" fill="#FFF" opacity="0.85"><animate attributeName="opacity" values="0.85;0.3;0.85" dur="3.4s" repeatCount="indefinite"/></circle>
+  <circle cx="268" cy="62"  r="0.9" fill="#FFF" opacity="0.55"/>
+  <circle cx="312" cy="24"  r="1.3" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.9s" repeatCount="indefinite"/></circle>
+  <circle cx="328" cy="48"  r="1.0" fill="#E0F7FF" opacity="0.6"/>
+  <circle cx="82"  cy="78"  r="1.1" fill="#FFF" opacity="0.65"><animate attributeName="opacity" values="0.65;0.15;0.65" dur="3.2s" repeatCount="indefinite"/></circle>
+  <circle cx="112" cy="95"  r="0.8" fill="#DDD" opacity="0.5"/>
+  <circle cx="145" cy="82"  r="1.2" fill="#FFF" opacity="0.7"/>
+  <circle cx="192" cy="98"  r="1.4" fill="#FFF" opacity="0.75"><animate attributeName="opacity" values="0.75;0.2;0.75" dur="2.9s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="85"  r="0.9" fill="#FFF" opacity="0.6"/>
+  <circle cx="265" cy="105" r="1.1" fill="#FFF" opacity="0.65"><animate attributeName="opacity" values="0.65;1;0.65" dur="3.3s" repeatCount="indefinite"/></circle>
+  <circle cx="295" cy="88"  r="0.8" fill="#DDD" opacity="0.5"/>
+  <circle cx="58"  cy="110" r="1.0" fill="#FFF" opacity="0.55"/>
+  <circle cx="168" cy="120" r="1.3" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.8s" repeatCount="indefinite"/></circle>
+  <circle cx="212" cy="132" r="0.8" fill="#DDD" opacity="0.5"/>
+  <circle cx="252" cy="125" r="1.2" fill="#FFF" opacity="0.65"/>
+  <circle cx="282" cy="142" r="0.9" fill="#FFF" opacity="0.6"/>
+
+  <!-- Center Overhead Stars (Above Sun) -->
+  <circle cx="348" cy="14"  r="1.1" fill="#FFF" opacity="0.6"/>
+  <circle cx="372" cy="28"  r="1.4" fill="#FFF" opacity="0.75"><animate attributeName="opacity" values="0.75;0.25;0.75" dur="3.2s" repeatCount="indefinite"/></circle>
+  <circle cx="398" cy="12"  r="0.9" fill="#DDD" opacity="0.5"/>
+  <circle cx="422" cy="26"  r="1.2" fill="#FFF" opacity="0.7"/>
+  <circle cx="448" cy="15"  r="1.5" fill="#E0F7FF" opacity="0.85"><animate attributeName="opacity" values="0.85;0.35;0.85" dur="2.7s" repeatCount="indefinite"/></circle>
+  <circle cx="478" cy="24"  r="1.0" fill="#FFF" opacity="0.65"/>
+  <circle cx="505" cy="12"  r="1.3" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.6s" repeatCount="indefinite"/></circle>
+  <circle cx="532" cy="26"  r="0.9" fill="#FFF" opacity="0.55"/>
+  <circle cx="558" cy="14"  r="1.4" fill="#FFF" opacity="0.8"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="4.0s" repeatCount="indefinite"/></circle>
+
+  <!-- Right Upper Star Cluster -->
+  <circle cx="585" cy="38"  r="1.2" fill="#FFF" opacity="0.7"/>
+  <circle cx="608" cy="16"  r="1.0" fill="#E8F0FF" opacity="0.65"><animate attributeName="opacity" values="0.65;0.95;0.65" dur="2.6s" repeatCount="indefinite"/></circle>
+  <circle cx="652" cy="42"  r="1.5" fill="#FFF" opacity="0.85"><animate attributeName="opacity" values="0.85;0.25;0.85" dur="3.5s" repeatCount="indefinite"/></circle>
+  <circle cx="678" cy="18"  r="0.9" fill="#FFF" opacity="0.6"/>
+  <circle cx="702" cy="48"  r="1.3" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.3s" repeatCount="indefinite"/></circle>
+  <circle cx="728" cy="22"  r="1.1" fill="#FFF" opacity="0.65"/>
+  <circle cx="788" cy="18"  r="1.4" fill="#E0F7FF" opacity="0.8"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="4.3s" repeatCount="indefinite"/></circle>
+  <circle cx="815" cy="44"  r="1.2" fill="#FFF" opacity="0.7"/>
+  <circle cx="842" cy="20"  r="1.0" fill="#FFF" opacity="0.6"><animate attributeName="opacity" values="0.6;0.95;0.6" dur="2.9s" repeatCount="indefinite"/></circle>
+  <circle cx="872" cy="36"  r="1.5" fill="#FFF" opacity="0.8"><animate attributeName="opacity" values="0.8;0.25;0.8" dur="3.4s" repeatCount="indefinite"/></circle>
+  <circle cx="615" cy="68"  r="0.8" fill="#DDD" opacity="0.5"/>
+  <circle cx="642" cy="85"  r="1.2" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.7s" repeatCount="indefinite"/></circle>
+  <circle cx="675" cy="72"  r="1.0" fill="#FFF" opacity="0.6"/>
+  <circle cx="712" cy="92"  r="1.3" fill="#FFF" opacity="0.75"><animate attributeName="opacity" values="0.75;0.2;0.75" dur="3.1s" repeatCount="indefinite"/></circle>
+  <circle cx="745" cy="76"  r="0.9" fill="#FFF" opacity="0.55"/>
+  <circle cx="782" cy="98"  r="1.2" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.15;0.7" dur="3.8s" repeatCount="indefinite"/></circle>
+  <circle cx="825" cy="74"  r="1.4" fill="#FFF" opacity="0.8"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.8s" repeatCount="indefinite"/></circle>
+  <circle cx="865" cy="88"  r="1.0" fill="#DDD" opacity="0.55"/>
+  <circle cx="628" cy="115" r="1.1" fill="#FFF" opacity="0.65"/>
+  <circle cx="668" cy="128" r="0.9" fill="#FFF" opacity="0.55"><animate attributeName="opacity" values="0.55;0.9;0.55" dur="3.4s" repeatCount="indefinite"/></circle>
+  <circle cx="708" cy="118" r="1.3" fill="#FFF" opacity="0.7"/>
+  <circle cx="752" cy="135" r="0.8" fill="#DDD" opacity="0.5"/>
+  <circle cx="798" cy="122" r="1.2" fill="#FFF" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="4.1s" repeatCount="indefinite"/></circle>
+  <circle cx="845" cy="115" r="1.1" fill="#FFF" opacity="0.65"/>
+  <circle cx="882" cy="130" r="0.9" fill="#FFF" opacity="0.55"/>
+</g>
 
 <!-- ═══════════ RETROWAVE SUN ═══════════ -->
 <!-- Radiant Soft Magenta/Purple Halo -->
@@ -198,7 +289,7 @@
 <ellipse cx="450" cy="302" rx="460" ry="36" fill="url(#cityBacklight)" filter="url(#f2)"/>
 <rect x="0" y="270" width="900" height="32" fill="url(#cityBacklightHaze)"/>
 
-<!-- City Skyline Silhouette (Carefully proportioned low-profile metropolis silhouette) -->
+<!-- ── 1. City Skyline Base Silhouette ── -->
 <g fill="#0D011C">
   <!-- Left Sector (x=0 to x=280) -->
   <rect x="0"   y="292" width="22" height="10"/>
@@ -229,14 +320,11 @@
   <rect x="418" y="210" width="24" height="92"/>
 
   <!-- Center Landmark Sector (Dead center across the sun, x=430 to x=560) -->
-  <!-- Tower with twin antenna spires -->
   <rect x="440" y="196" width="30" height="106"/>
   <line x1="445" y1="168" x2="445" y2="196" stroke="#0D011C" stroke-width="2"/>
   <line x1="465" y1="168" x2="465" y2="196" stroke="#0D011C" stroke-width="2"/>
-  <!-- Grand modern apex skyscraper -->
   <polygon points="470,302 470,205 484,190 504,190 514,205 514,302"/>
   <line x1="494" y1="164" x2="494" y2="190" stroke="#0D011C" stroke-width="2.2"/>
-  <!-- Setback highrise tower -->
   <rect x="514" y="208" width="28" height="94"/>
   <polygon points="540,302 540,198 560,218 560,302"/>
   <line x1="542" y1="172" x2="542" y2="198" stroke="#0D011C" stroke-width="1.8"/>
@@ -264,111 +352,212 @@
   <rect x="872" y="282" width="28" height="20"/>
 </g>
 
-<!-- Glowing Horizon Neon Laser Line -->
-<rect x="0" y="299" width="900" height="6" fill="#FF00AA" opacity="0.5" filter="url(#f2)"/>
-<rect x="0" y="300.5" width="900" height="3" fill="#FF00CC" opacity="0.85" filter="url(#f1)"/>
-<line x1="0" y1="302" x2="900" y2="302" stroke="#FFAAFF" stroke-width="1.5" opacity="0.95"/>
+<!-- ── 2. City Skyline Illuminated Neon Windows & Accents ── -->
+<g>
+  <!-- Window matrices: Left Sector -->
+  <rect x="38"  y="280" width="18" height="20" fill="url(#winWarm)"/>
+  <rect x="58"  y="270" width="14" height="30" fill="url(#winCyan)"/>
+  <rect x="76"  y="266" width="16" height="34" fill="url(#winWarm)"/>
+  <rect x="98"  y="254" width="16" height="46" fill="url(#winDense)"/>
+  <rect x="116" y="262" width="22" height="38" fill="url(#winPink)"/>
+  <rect x="140" y="248" width="20" height="52" fill="url(#winWarm)"/>
+  <rect x="164" y="250" width="20" height="50" fill="url(#winCyan)"/>
+  <rect x="186" y="242" width="24" height="58" fill="url(#winDense)"/>
+  <rect x="214" y="234" width="20" height="66" fill="url(#winWarm)"/>
+  <rect x="240" y="238" width="18" height="62" fill="url(#winCyan)"/>
+  <rect x="260" y="244" width="20" height="56" fill="url(#winPink)"/>
 
-<!-- ═══════════ GROUND ═══════════ -->
+  <!-- Window matrices: Mid-Left Sector (Framing sun) -->
+  <rect x="284" y="226" width="26" height="74" fill="url(#winWarm)"/>
+  <rect x="316" y="236" width="20" height="64" fill="url(#winCyan)"/>
+  <rect x="338" y="214" width="24" height="86" fill="url(#winDense)"/>
+  <rect x="366" y="222" width="22" height="78" fill="url(#winWarm)"/>
+  <rect x="392" y="202" width="22" height="98" fill="url(#winCyan)"/>
+  <rect x="420" y="214" width="20" height="86" fill="url(#winPink)"/>
+
+  <!-- Window matrices: Center Landmark Sector (In front of sun) -->
+  <rect x="442" y="200" width="26" height="100" fill="url(#winDense)"/>
+  <rect x="474" y="208" width="16" height="92" fill="url(#winWarm)"/>
+  <rect x="494" y="208" width="16" height="92" fill="url(#winCyan)"/>
+  <rect x="516" y="212" width="24" height="88" fill="url(#winWarm)"/>
+  <rect x="542" y="206" width="16" height="94" fill="url(#winPink)"/>
+
+  <!-- Window matrices: Mid-Right Sector -->
+  <rect x="562" y="226" width="22" height="74" fill="url(#winCyan)"/>
+  <rect x="586" y="208" width="24" height="92" fill="url(#winDense)"/>
+  <rect x="616" y="220" width="22" height="80" fill="url(#winWarm)"/>
+  <rect x="642" y="218" width="22" height="82" fill="url(#winCyan)"/>
+  <rect x="670" y="232" width="24" height="68" fill="url(#winPink)"/>
+  <rect x="696" y="226" width="16" height="74" fill="url(#winWarm)"/>
+
+  <!-- Window matrices: Right Sector -->
+  <rect x="716" y="238" width="20" height="62" fill="url(#winCyan)"/>
+  <rect x="738" y="232" width="22" height="68" fill="url(#winDense)"/>
+  <rect x="764" y="246" width="22" height="54" fill="url(#winWarm)"/>
+  <rect x="788" y="242" width="22" height="58" fill="url(#winPink)"/>
+  <rect x="814" y="254" width="18" height="46" fill="url(#winCyan)"/>
+  <rect x="834" y="266" width="20" height="34" fill="url(#winWarm)"/>
+  <rect x="856" y="276" width="16" height="24" fill="url(#winCyan)"/>
+
+  <!-- Glowing Neon Rooftop Trims & Architecture Lines -->
+  <g stroke-linecap="round">
+    <line x1="210" y1="230" x2="228" y2="212" stroke="#FF00AA" stroke-width="1.6" filter="url(#f1)"/>
+    <line x1="280" y1="224" x2="304" y2="204" stroke="#00FFFF" stroke-width="1.8" filter="url(#f1)"/>
+    <line x1="336" y1="212" x2="364" y2="190" stroke="#FF00AA" stroke-width="1.8" filter="url(#f1)"/>
+    <line x1="388" y1="198" x2="408" y2="182" stroke="#00FFFF" stroke-width="1.8" filter="url(#f1)"/>
+    <polygon points="470,205 484,190 504,190 514,205" fill="none" stroke="#FF00AA" stroke-width="1.8" filter="url(#f1)"/>
+    <line x1="584" y1="204" x2="608" y2="190" stroke="#00FFFF" stroke-width="1.8" filter="url(#f1)"/>
+    <line x1="638" y1="215" x2="658" y2="198" stroke="#FF00AA" stroke-width="1.8" filter="url(#f1)"/>
+    <line x1="736" y1="228" x2="752" y2="214" stroke="#00FFFF" stroke-width="1.6" filter="url(#f1)"/>
+
+    <!-- Vertical Neon Elevator / Conduit Light Ribbons -->
+    <line x1="198" y1="242" x2="198" y2="300" stroke="#00FFFF" stroke-width="1.4" opacity="0.85" filter="url(#f1)"/>
+    <line x1="455" y1="196" x2="455" y2="300" stroke="#00FFFF" stroke-width="1.6" opacity="0.9"  filter="url(#f1)"/>
+    <line x1="627" y1="218" x2="627" y2="300" stroke="#FF00AA" stroke-width="1.4" opacity="0.85" filter="url(#f1)"/>
+  </g>
+
+  <!-- Aviation Hazard Warning Beacons (Rooftop Antenna Spires) -->
+  <circle cx="106" cy="230" r="1.6" fill="#FF1144" filter="url(#f1)"><animate attributeName="opacity" values="1;0.1;1" dur="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="174" cy="222" r="1.6" fill="#00FFFF" filter="url(#f1)"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="249" cy="208" r="1.6" fill="#FF1144" filter="url(#f1)"><animate attributeName="opacity" values="1;0.1;1" dur="1.3s" repeatCount="indefinite"/></circle>
+  <circle cx="340" cy="172" r="1.8" fill="#FF1144" filter="url(#f1)"><animate attributeName="opacity" values="1;0.1;1" dur="1.1s" repeatCount="indefinite"/></circle>
+  <circle cx="408" cy="162" r="1.8" fill="#00FFFF" filter="url(#f1)"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="445" cy="168" r="1.8" fill="#FF1144" filter="url(#f1)"><animate attributeName="opacity" values="1;0.1;1" dur="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="465" cy="168" r="1.8" fill="#FF1144" filter="url(#f1)"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="494" cy="164" r="2.2" fill="#00FFFF" filter="url(#f1)"><animate attributeName="opacity" values="1;0.1;1" dur="1.0s" repeatCount="indefinite"/></circle>
+  <circle cx="542" cy="172" r="1.8" fill="#FF1144" filter="url(#f1)"><animate attributeName="opacity" values="1;0.1;1" dur="1.3s" repeatCount="indefinite"/></circle>
+  <circle cx="627" cy="184" r="1.8" fill="#00FFFF" filter="url(#f1)"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.6s" repeatCount="indefinite"/></circle>
+  <circle cx="696" cy="194" r="1.6" fill="#FF1144" filter="url(#f1)"><animate attributeName="opacity" values="1;0.1;1" dur="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="752" cy="192" r="1.6" fill="#00FFFF" filter="url(#f1)"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="823" cy="228" r="1.5" fill="#FF1144" filter="url(#f1)"><animate attributeName="opacity" values="1;0.1;1" dur="1.4s" repeatCount="indefinite"/></circle>
+
+  <!-- Alive City: Random Office Window Flickers -->
+  <rect x="188" y="250" width="3" height="4" fill="#FFEAA7"><animate attributeName="opacity" values="0.9;0.1;0.9" dur="4.2s" repeatCount="indefinite"/></rect>
+  <rect x="342" y="230" width="3" height="4" fill="#00FFFF"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.5s" repeatCount="indefinite"/></rect>
+  <rect x="478" y="220" width="4" height="4" fill="#FFEAA7"><animate attributeName="opacity" values="0.9;0.1;0.9" dur="5.1s" repeatCount="indefinite"/></rect>
+  <rect x="646" y="235" width="3" height="4" fill="#FF1493"><animate attributeName="opacity" values="0.8;0.1;0.8" dur="4.6s" repeatCount="indefinite"/></rect>
+</g>
+
+<!-- Glowing Horizon Neon Laser Line -->
+<rect x="0" y="299" width="900" height="6" fill="#FF00AA" opacity="0.6" filter="url(#f2)"/>
+<rect x="0" y="300.5" width="900" height="3" fill="#FF00CC" opacity="0.9" filter="url(#f1)"/>
+<line x1="0" y1="302" x2="900" y2="302" stroke="#FFFFFF" stroke-width="1.6" opacity="0.95"/>
+
+<!-- ═══════════ GROUND & HIGHWAY ROADWAY ═══════════ -->
 <rect x="0" y="302" width="900" height="218" fill="url(#groundG)"/>
 
-<!-- ═══════════ PERSPECTIVE GRID (ALL NEON PINK, FULL TILED MESH) ═══════════ -->
 <g clip-path="url(#groundClip)">
 
-  <!-- 1. Converging perspective lines fanning out to bottom and side walls -->
-  <g stroke="#FF00AA" stroke-linecap="round">
-    <!-- Lines reaching the left wall (x=0) -->
-    <line x1="450" y1="302" x2="0" y2="306" stroke-width="0.7" opacity="0.5"/>
-    <line x1="450" y1="302" x2="0" y2="313" stroke-width="0.8" opacity="0.52"/>
-    <line x1="450" y1="302" x2="0" y2="323" stroke-width="0.9" opacity="0.55"/>
-    <line x1="450" y1="302" x2="0" y2="338" stroke-width="1.0" opacity="0.58"/>
-    <line x1="450" y1="302" x2="0" y2="360" stroke-width="1.1" opacity="0.6"/>
-    <line x1="450" y1="302" x2="0" y2="392" stroke-width="1.2" opacity="0.62"/>
-    <line x1="450" y1="302" x2="0" y2="440" stroke-width="1.4" opacity="0.65"/>
-    <line x1="450" y1="302" x2="0" y2="510" stroke-width="1.6" opacity="0.68"/>
+  <!-- Dedicated Highway Road Bed (Dark reflective asphalt with neon sheen) -->
+  <polygon points="450,302 240,520 660,520" fill="url(#roadSurface)"/>
+  <polygon points="450,302 240,520 660,520" fill="url(#roadLaneSheen)"/>
 
-    <!-- Lines reaching bottom border (y=520) -->
-    <line x1="450" y1="302" x2="30"  y2="520" stroke-width="1.5" opacity="0.65"/>
-    <line x1="450" y1="302" x2="85"  y2="520" stroke-width="1.4" opacity="0.65"/>
-    <line x1="450" y1="302" x2="145" y2="520" stroke-width="1.3" opacity="0.6"/>
-    <line x1="450" y1="302" x2="205" y2="520" stroke-width="1.2" opacity="0.6"/>
-    <line x1="450" y1="302" x2="265" y2="520" stroke-width="1.1" opacity="0.55"/>
-    <line x1="450" y1="302" x2="325" y2="520" stroke-width="1.0" opacity="0.55"/>
-    <line x1="450" y1="302" x2="385" y2="520" stroke-width="0.9" opacity="0.5"/>
-    <line x1="450" y1="302" x2="420" y2="520" stroke-width="0.8" opacity="0.5"/>
-    <line x1="450" y1="302" x2="450" y2="520" stroke-width="0.8" opacity="0.5"/>
-    <line x1="450" y1="302" x2="480" y2="520" stroke-width="0.8" opacity="0.5"/>
-    <line x1="450" y1="302" x2="515" y2="520" stroke-width="0.9" opacity="0.5"/>
-    <line x1="450" y1="302" x2="575" y2="520" stroke-width="1.0" opacity="0.55"/>
-    <line x1="450" y1="302" x2="635" y2="520" stroke-width="1.1" opacity="0.55"/>
-    <line x1="450" y1="302" x2="695" y2="520" stroke-width="1.2" opacity="0.6"/>
-    <line x1="450" y1="302" x2="755" y2="520" stroke-width="1.3" opacity="0.6"/>
-    <line x1="450" y1="302" x2="815" y2="520" stroke-width="1.4" opacity="0.65"/>
-    <line x1="450" y1="302" x2="870" y2="520" stroke-width="1.5" opacity="0.65"/>
+  <!-- ── 1. PROMINENT HIGHWAY BOUNDARY SHOULDER RAILS (CYAN & LASER CORE) ── -->
+  <!-- Left Highway Shoulder (Underglow + Bright Neon + White Laser Ridge) -->
+  <line x1="450" y1="302" x2="240" y2="520" stroke="#00F0FF" stroke-width="6" opacity="0.55" filter="url(#f2)"/>
+  <line x1="450" y1="302" x2="240" y2="520" stroke="#00FFFF" stroke-width="2.6" opacity="0.95" filter="url(#f1)"/>
+  <line x1="450" y1="302" x2="240" y2="520" stroke="#FFFFFF" stroke-width="1.2" opacity="1"/>
+
+  <!-- Right Highway Shoulder (Underglow + Bright Neon + White Laser Ridge) -->
+  <line x1="450" y1="302" x2="660" y2="520" stroke="#00F0FF" stroke-width="6" opacity="0.55" filter="url(#f2)"/>
+  <line x1="450" y1="302" x2="660" y2="520" stroke="#00FFFF" stroke-width="2.6" opacity="0.95" filter="url(#f1)"/>
+  <line x1="450" y1="302" x2="660" y2="520" stroke="#FFFFFF" stroke-width="1.2" opacity="1"/>
+
+  <!-- ── 2. FULL CONVERGING PERSPECTIVE GRID (VIBRANT & SHARP) ── -->
+  <g stroke="#FF00CC" stroke-linecap="round">
+    <!-- Lines reaching the left wall (x=0) -->
+    <line x1="450" y1="302" x2="0" y2="306" stroke-width="0.9" opacity="0.65"/>
+    <line x1="450" y1="302" x2="0" y2="313" stroke-width="1.0" opacity="0.68"/>
+    <line x1="450" y1="302" x2="0" y2="323" stroke-width="1.2" opacity="0.72"/>
+    <line x1="450" y1="302" x2="0" y2="338" stroke-width="1.3" opacity="0.75"/>
+    <line x1="450" y1="302" x2="0" y2="360" stroke-width="1.5" opacity="0.78"/>
+    <line x1="450" y1="302" x2="0" y2="392" stroke-width="1.7" opacity="0.80"/>
+    <line x1="450" y1="302" x2="0" y2="440" stroke-width="1.9" opacity="0.82"/>
+    <line x1="450" y1="302" x2="0" y2="510" stroke-width="2.2" opacity="0.85"/>
+
+    <!-- Outer-grid lines reaching bottom border outside the highway -->
+    <line x1="450" y1="302" x2="30"  y2="520" stroke-width="2.2" opacity="0.82"/>
+    <line x1="450" y1="302" x2="85"  y2="520" stroke-width="2.0" opacity="0.80"/>
+    <line x1="450" y1="302" x2="145" y2="520" stroke-width="1.8" opacity="0.78"/>
+    <line x1="450" y1="302" x2="195" y2="520" stroke-width="1.6" opacity="0.76"/>
+
+    <!-- Inner-highway lane divider lines -->
+    <line x1="450" y1="302" x2="310" y2="520" stroke="#FF1493" stroke-width="1.5" opacity="0.82"/>
+    <line x1="450" y1="302" x2="380" y2="520" stroke="#FF1493" stroke-width="1.4" opacity="0.80"/>
+    <!-- Center highway lane line (glowing pink) -->
+    <line x1="450" y1="302" x2="450" y2="520" stroke="#FF00AA" stroke-width="1.4" opacity="0.80"/>
+    <line x1="450" y1="302" x2="520" y2="520" stroke="#FF1493" stroke-width="1.4" opacity="0.80"/>
+    <line x1="450" y1="302" x2="590" y2="520" stroke="#FF1493" stroke-width="1.5" opacity="0.82"/>
+
+    <!-- Outer-grid lines reaching bottom border right side -->
+    <line x1="450" y1="302" x2="705" y2="520" stroke-width="1.6" opacity="0.76"/>
+    <line x1="450" y1="302" x2="755" y2="520" stroke-width="1.8" opacity="0.78"/>
+    <line x1="450" y1="302" x2="815" y2="520" stroke-width="2.0" opacity="0.80"/>
+    <line x1="450" y1="302" x2="870" y2="520" stroke-width="2.2" opacity="0.82"/>
 
     <!-- Lines reaching the right wall (x=900) -->
-    <line x1="450" y1="302" x2="900" y2="306" stroke-width="0.7" opacity="0.5"/>
-    <line x1="450" y1="302" x2="900" y2="313" stroke-width="0.8" opacity="0.52"/>
-    <line x1="450" y1="302" x2="900" y2="323" stroke-width="0.9" opacity="0.55"/>
-    <line x1="450" y1="302" x2="900" y2="338" stroke-width="1.0" opacity="0.58"/>
-    <line x1="450" y1="302" x2="900" y2="360" stroke-width="1.1" opacity="0.6"/>
-    <line x1="450" y1="302" x2="900" y2="392" stroke-width="1.2" opacity="0.62"/>
-    <line x1="450" y1="302" x2="900" y2="440" stroke-width="1.4" opacity="0.65"/>
-    <line x1="450" y1="302" x2="900" y2="510" stroke-width="1.6" opacity="0.68"/>
+    <line x1="450" y1="302" x2="900" y2="306" stroke-width="0.9" opacity="0.65"/>
+    <line x1="450" y1="302" x2="900" y2="313" stroke-width="1.0" opacity="0.68"/>
+    <line x1="450" y1="302" x2="900" y2="323" stroke-width="1.2" opacity="0.72"/>
+    <line x1="450" y1="302" x2="900" y2="338" stroke-width="1.3" opacity="0.75"/>
+    <line x1="450" y1="302" x2="900" y2="360" stroke-width="1.5" opacity="0.78"/>
+    <line x1="450" y1="302" x2="900" y2="392" stroke-width="1.7" opacity="0.80"/>
+    <line x1="450" y1="302" x2="900" y2="440" stroke-width="1.9" opacity="0.82"/>
+    <line x1="450" y1="302" x2="900" y2="510" stroke-width="2.2" opacity="0.85"/>
   </g>
 
-  <!-- 2. Full set of static horizontal perspective lines forming continuous synthwave tiles -->
-  <g stroke="#FF00AA">
-    <line x1="0" y1="303.5" x2="900" y2="303.5" stroke-width="0.5" opacity="0.55"/>
-    <line x1="0" y1="305.5" x2="900" y2="305.5" stroke-width="0.5" opacity="0.55"/>
-    <line x1="0" y1="308.0" x2="900" y2="308.0" stroke-width="0.6" opacity="0.55"/>
-    <line x1="0" y1="311.5" x2="900" y2="311.5" stroke-width="0.6" opacity="0.55"/>
-    <line x1="0" y1="316.0" x2="900" y2="316.0" stroke-width="0.7" opacity="0.55"/>
-    <line x1="0" y1="321.5" x2="900" y2="321.5" stroke-width="0.7" opacity="0.52"/>
-    <line x1="0" y1="328.0" x2="900" y2="328.0" stroke-width="0.8" opacity="0.52"/>
-    <line x1="0" y1="336.0" x2="900" y2="336.0" stroke-width="0.9" opacity="0.50"/>
-    <line x1="0" y1="345.5" x2="900" y2="345.5" stroke-width="1.0" opacity="0.50"/>
-    <line x1="0" y1="357.0" x2="900" y2="357.0" stroke-width="1.1" opacity="0.48"/>
-    <line x1="0" y1="371.0" x2="900" y2="371.0" stroke-width="1.2" opacity="0.48"/>
-    <line x1="0" y1="388.0" x2="900" y2="388.0" stroke-width="1.3" opacity="0.46"/>
-    <line x1="0" y1="409.0" x2="900" y2="409.0" stroke-width="1.5" opacity="0.46"/>
-    <line x1="0" y1="435.0" x2="900" y2="435.0" stroke-width="1.7" opacity="0.44"/>
-    <line x1="0" y1="468.0" x2="900" y2="468.0" stroke-width="2.0" opacity="0.44"/>
-    <line x1="0" y1="510.0" x2="900" y2="510.0" stroke-width="2.4" opacity="0.42"/>
+  <!-- ── 3. FULL SET OF PROMINENT HORIZONTAL PERSPECTIVE TILES (VIBRANT NEON) ── -->
+  <g stroke="#FF00CC">
+    <line x1="0" y1="303.5" x2="900" y2="303.5" stroke-width="0.7" opacity="0.70"/>
+    <line x1="0" y1="305.5" x2="900" y2="305.5" stroke-width="0.8" opacity="0.70"/>
+    <line x1="0" y1="308.0" x2="900" y2="308.0" stroke-width="0.9" opacity="0.70"/>
+    <line x1="0" y1="311.5" x2="900" y2="311.5" stroke-width="1.0" opacity="0.72"/>
+    <line x1="0" y1="316.0" x2="900" y2="316.0" stroke-width="1.1" opacity="0.72"/>
+    <line x1="0" y1="321.5" x2="900" y2="321.5" stroke-width="1.2" opacity="0.74"/>
+    <line x1="0" y1="328.0" x2="900" y2="328.0" stroke-width="1.3" opacity="0.74"/>
+    <line x1="0" y1="336.0" x2="900" y2="336.0" stroke-width="1.4" opacity="0.76"/>
+    <line x1="0" y1="345.5" x2="900" y2="345.5" stroke-width="1.6" opacity="0.76"/>
+    <line x1="0" y1="357.0" x2="900" y2="357.0" stroke-width="1.8" opacity="0.78"/>
+    <line x1="0" y1="371.0" x2="900" y2="371.0" stroke-width="2.0" opacity="0.80"/>
+    <line x1="0" y1="388.0" x2="900" y2="388.0" stroke-width="2.2" opacity="0.82"/>
+    <line x1="0" y1="409.0" x2="900" y2="409.0" stroke-width="2.5" opacity="0.84"/>
+    <line x1="0" y1="435.0" x2="900" y2="435.0" stroke-width="2.8" opacity="0.86"/>
+    <line x1="0" y1="468.0" x2="900" y2="468.0" stroke-width="3.2" opacity="0.88"/>
+    <line x1="0" y1="510.0" x2="900" y2="510.0" stroke-width="3.6" opacity="0.90"/>
   </g>
 
-  <!-- 3. Animated forward-traveling neon laser wave (Driving simulation across the grid) -->
-  <line stroke="#FF22CC" stroke-opacity="0">
-    <animate attributeName="x1" from="449" to="0"   dur="2s" begin="0s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y1" from="302" to="520" dur="2s" begin="0s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="x2" from="451" to="900" dur="2s" begin="0s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y2" from="302" to="520" dur="2s" begin="0s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="stroke-width" values="0.8;1.5;3.5;6"   keyTimes="0;0.2;0.7;1" dur="2s" begin="0s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0;0.8;0.7;0" keyTimes="0;0.08;0.8;1" dur="2s" begin="0s" repeatCount="indefinite"/>
+  <!-- ── 4. DYNAMIC FORWARD-TRAVELING NEON LASER ROAD WAVES ── -->
+  <line stroke="#FF33DD" stroke-opacity="0">
+    <animate attributeName="x1" from="449" to="0"   dur="1.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x2" from="451" to="900" dur="1.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="stroke-width" values="1;2;4.5;7" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.9;0.8;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0s" repeatCount="indefinite"/>
   </line>
-  <line stroke="#FF22CC" stroke-opacity="0">
-    <animate attributeName="x1" from="449" to="0"   dur="2s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y1" from="302" to="520" dur="2s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="x2" from="451" to="900" dur="2s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y2" from="302" to="520" dur="2s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="stroke-width" values="0.8;1.5;3.5;6"   keyTimes="0;0.2;0.7;1" dur="2s" begin="0.5s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0;0.8;0.7;0" keyTimes="0;0.08;0.8;1" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  <line stroke="#FF33DD" stroke-opacity="0">
+    <animate attributeName="x1" from="449" to="0"   dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x2" from="451" to="900" dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="stroke-width" values="1;2;4.5;7" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.9;0.8;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
   </line>
-  <line stroke="#FF22CC" stroke-opacity="0">
-    <animate attributeName="x1" from="449" to="0"   dur="2s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y1" from="302" to="520" dur="2s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="x2" from="451" to="900" dur="2s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y2" from="302" to="520" dur="2s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="stroke-width" values="0.8;1.5;3.5;6"   keyTimes="0;0.2;0.7;1" dur="2s" begin="1.0s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0;0.8;0.7;0" keyTimes="0;0.08;0.8;1" dur="2s" begin="1.0s" repeatCount="indefinite"/>
+  <line stroke="#FF33DD" stroke-opacity="0">
+    <animate attributeName="x1" from="449" to="0"   dur="1.8s" begin="0.9s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="0.9s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x2" from="451" to="900" dur="1.8s" begin="0.9s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="0.9s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="stroke-width" values="1;2;4.5;7" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.9;0.8;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
   </line>
-  <line stroke="#FF22CC" stroke-opacity="0">
-    <animate attributeName="x1" from="449" to="0"   dur="2s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y1" from="302" to="520" dur="2s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="x2" from="451" to="900" dur="2s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y2" from="302" to="520" dur="2s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="stroke-width" values="0.8;1.5;3.5;6"   keyTimes="0;0.2;0.7;1" dur="2s" begin="1.5s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0;0.8;0.7;0" keyTimes="0;0.08;0.8;1" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+  <line stroke="#FF33DD" stroke-opacity="0">
+    <animate attributeName="x1" from="449" to="0"   dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x2" from="451" to="900" dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="stroke-width" values="1;2;4.5;7" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.9;0.8;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
   </line>
 
 </g>
