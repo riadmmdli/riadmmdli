@@ -34,6 +34,38 @@
     <stop offset="100%" stop-color="#FF00AA" stop-opacity="0"/>
   </radialGradient>
 
+  <!-- Floor clipping & perspective depth gradients -->
+  <clipPath id="groundClip">
+    <rect x="0" y="302" width="900" height="218"/>
+  </clipPath>
+
+  <linearGradient id="mountainGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#1F043D"/>
+    <stop offset="60%"  stop-color="#100122"/>
+    <stop offset="100%" stop-color="#040010"/>
+  </linearGradient>
+
+  <linearGradient id="cityDepthFog" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0%"   stop-color="#FF0088" stop-opacity="0.38"/>
+    <stop offset="35%"  stop-color="#9900CC" stop-opacity="0.2"/>
+    <stop offset="75%"  stop-color="#050015" stop-opacity="0.05"/>
+    <stop offset="100%" stop-color="#050015" stop-opacity="0"/>
+  </linearGradient>
+
+  <radialGradient id="horizDepthGlow" cx="50%" cy="100%" r="50%">
+    <stop offset="0%"   stop-color="#00F0FF" stop-opacity="0.5"/>
+    <stop offset="25%"  stop-color="#FF00AA" stop-opacity="0.3"/>
+    <stop offset="60%"  stop-color="#7000FF" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+  </radialGradient>
+
+  <linearGradient id="sunRoadReflect" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#FF1A95" stop-opacity="0.35"/>
+    <stop offset="25%"  stop-color="#00F0FF" stop-opacity="0.22"/>
+    <stop offset="65%"  stop-color="#8800FF" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#FF0088" stop-opacity="0"/>
+  </linearGradient>
+
   <radialGradient id="ugGrad" cx="50%" cy="0%" r="100%">
     <stop offset="0%"   stop-color="#FF00BB" stop-opacity="0.85"/>
     <stop offset="50%"  stop-color="#8800FF" stop-opacity="0.35"/>
@@ -174,23 +206,34 @@
   <circle cx="450" cy="180" r="142" fill="url(#sunCore)"/>
 </g>
 
-<!-- ═══════════ WIREFRAME MOUNTAINS ═══════════ -->
-<!-- Left mountain silhouette -->
+<!-- ═══════════ WIREFRAME MOUNTAINS (Deep Distant Horizon Layer) ═══════════ -->
+<!-- Left mountain range -->
 <polygon points="0,302 0,255 28,238 58,250 88,220 118,238 148,208 178,228 208,212 235,228 258,218 278,232 302,210 322,226 338,302"
-  fill="#050015" stroke="#2244AA" stroke-width="1.2" opacity="0.85"/>
-<!-- Left mountain wireframe lines -->
-<line x1="88"  y1="220" x2="88"  y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
-<line x1="148" y1="208" x2="148" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
-<line x1="208" y1="212" x2="208" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
-<line x1="258" y1="218" x2="258" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
+  fill="url(#mountainGrad)"/>
+<!-- Left mountain glowing rim & wireframe ridges -->
+<polyline points="0,255 28,238 58,250 88,220 118,238 148,208 178,228 208,212 235,228 258,218 278,232 302,210 322,226 338,302"
+  fill="none" stroke="#00E5FF" stroke-width="1.6" opacity="0.75" filter="url(#f1)"/>
+<polyline points="0,255 28,238 58,250 88,220 118,238 148,208 178,228 208,212 235,228 258,218 278,232 302,210 322,226 338,302"
+  fill="none" stroke="#E0FFFF" stroke-width="0.8" opacity="0.9"/>
+<line x1="88"  y1="220" x2="88"  y2="302" stroke="#5511AA" stroke-width="0.9" opacity="0.6"/>
+<line x1="148" y1="208" x2="148" y2="302" stroke="#00D4FF" stroke-width="0.8" opacity="0.45"/>
+<line x1="208" y1="212" x2="208" y2="302" stroke="#5511AA" stroke-width="0.9" opacity="0.6"/>
+<line x1="258" y1="218" x2="258" y2="302" stroke="#00D4FF" stroke-width="0.8" opacity="0.45"/>
+<line x1="302" y1="210" x2="302" y2="302" stroke="#5511AA" stroke-width="0.9" opacity="0.6"/>
 
-<!-- Right mountain silhouette -->
+<!-- Right mountain range -->
 <polygon points="900,302 900,255 872,238 842,250 812,220 782,238 752,208 722,228 692,212 665,228 642,218 622,232 598,210 578,226 562,302"
-  fill="#050015" stroke="#2244AA" stroke-width="1.2" opacity="0.85"/>
-<line x1="812" y1="220" x2="812" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
-<line x1="752" y1="208" x2="752" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
-<line x1="692" y1="212" x2="692" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
-<line x1="642" y1="218" x2="642" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
+  fill="url(#mountainGrad)"/>
+<!-- Right mountain glowing rim & wireframe ridges -->
+<polyline points="900,255 872,238 842,250 812,220 782,238 752,208 722,228 692,212 665,228 642,218 622,232 598,210 578,226 562,302"
+  fill="none" stroke="#00E5FF" stroke-width="1.6" opacity="0.75" filter="url(#f1)"/>
+<polyline points="900,255 872,238 842,250 812,220 782,238 752,208 722,228 692,212 665,228 642,218 622,232 598,210 578,226 562,302"
+  fill="none" stroke="#E0FFFF" stroke-width="0.8" opacity="0.9"/>
+<line x1="812" y1="220" x2="812" y2="302" stroke="#5511AA" stroke-width="0.9" opacity="0.6"/>
+<line x1="752" y1="208" x2="752" y2="302" stroke="#00D4FF" stroke-width="0.8" opacity="0.45"/>
+<line x1="692" y1="212" x2="692" y2="302" stroke="#5511AA" stroke-width="0.9" opacity="0.6"/>
+<line x1="642" y1="218" x2="642" y2="302" stroke="#00D4FF" stroke-width="0.8" opacity="0.45"/>
+<line x1="598" y1="210" x2="598" y2="302" stroke="#5511AA" stroke-width="0.9" opacity="0.6"/>
 
 <!-- ═══════════ REALISTIC RETROWAVE METROPOLIS ═══════════ -->
 
@@ -323,14 +366,9 @@
 <!-- Tower W7: Cyber Commercial Complex with Billboard (x=304) -->
 <rect x="306" y="225" width="36" height="77" fill="url(#bldgMidGrad)" stroke="#1F043D" stroke-width="0.8"/>
 <rect x="310" y="232" width="28" height="64" fill="url(#winCyan)" opacity="0.65"/>
-<!-- Rooftop Holographic/Neon Billboard -->
-<rect x="310" y="208" width="28" height="15" rx="2" fill="#000" stroke="#00FFFF" stroke-width="1.2" filter="url(#f1)">
-  <animate attributeName="stroke" values="#00FFFF;#FF00AA;#00FFFF" dur="4s" repeatCount="indefinite"/>
-</rect>
-<rect x="312" y="210" width="24" height="11" fill="#060018"/>
-<text x="315" y="219" fill="#00FFFF" font-family="'Courier New', monospace" font-size="7" font-weight="bold">AI 84</text>
-<line x1="316" y1="223" x2="316" y2="225" stroke="#331155" stroke-width="1"/>
-<line x1="332" y1="223" x2="332" y2="225" stroke="#331155" stroke-width="1"/>
+<!-- Rooftop Antenna & Beacon -->
+<line x1="324" y1="202" x2="324" y2="225" stroke="#441166" stroke-width="1.5"/>
+<circle cx="324" cy="200" r="1.8" fill="#00FFFF"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
 
 <!-- CENTRAL LANDMARK SECTOR (Framed Against The Sun, x=340-560) -->
 
@@ -502,8 +540,9 @@
   <animate attributeName="opacity" values="0.9;0.9;0.9;0.2;0.9" dur="6s" repeatCount="indefinite"/>
 </rect>
 
-<!-- ── LAYER 4: CITY STREET-LEVEL AMBIENT HAZE (Vibrant City Glow) ── -->
-<rect x="40" y="270" width="820" height="32" fill="url(#cityBaseHaze)"/>
+<!-- ── LAYER 4: CITY STREET-LEVEL ATMOSPHERIC DEPTH HAZE ── -->
+<rect x="0" y="258" width="900" height="44" fill="url(#cityDepthFog)"/>
+<ellipse cx="450" cy="302" rx="440" ry="24" fill="url(#horizDepthGlow)"/>
 
 
 <!-- Palm trees (silhouette left) -->
@@ -525,137 +564,154 @@
   <path d="M 862,252 Q 842,245 826,252" stroke-width="5"/>
 </g>
 
-<!-- Horizon atmospheric glow -->
-<ellipse cx="450" cy="302" rx="500" ry="42" fill="url(#horizPink)"/>
-<rect x="0" y="298" width="900" height="6" fill="#FF00AA" opacity="0.2" filter="url(#f2)">
-  <animate attributeName="opacity" values="0.15;0.3;0.15" dur="2.5s" repeatCount="indefinite"/>
+<!-- Horizon atmospheric depth line & optical vanishing point bloom -->
+<ellipse cx="450" cy="302" rx="460" ry="20" fill="url(#horizDepthGlow)"/>
+<rect x="0" y="299" width="900" height="5" fill="#FF0088" opacity="0.3" filter="url(#f2)">
+  <animate attributeName="opacity" values="0.25;0.45;0.25" dur="2.8s" repeatCount="indefinite"/>
 </rect>
-<!-- Horizon neon line -->
-<rect x="0" y="300" width="900" height="2.5" fill="#FF44CC" opacity="0.55" filter="url(#f1)"/>
+<!-- Horizon laser division line -->
+<rect x="0" y="301" width="900" height="1.6" fill="#00FFFF" opacity="0.85" filter="url(#f1)"/>
+<rect x="0" y="301.5" width="900" height="0.8" fill="#FFFFFF" opacity="0.95"/>
+<!-- Vanishing Point Sun Flare Starburst -->
+<ellipse cx="450" cy="302" rx="80" ry="4" fill="#FFFFFF" opacity="0.75" filter="url(#f1)"/>
+<ellipse cx="450" cy="302" rx="130" ry="8" fill="#00FFFF" opacity="0.4" filter="url(#f2)"/>
 
-<!-- ═══════════ GROUND ═══════════ -->
-<rect x="0" y="302" width="900" height="218" fill="url(#groundG)"/>
+<!-- ═══════════ GROUND & DEEP PERSPECTIVE GRID ═══════════ -->
+<g clip-path="url(#groundClip)">
+  <!-- Ground base dark gradient -->
+  <rect x="0" y="302" width="900" height="218" fill="url(#groundG)"/>
 
-<!-- ═══════════ PERSPECTIVE GRID ═══════════ -->
-<!-- VP = (450, 302) -->
+  <!-- Sun & City Neon Wet-Reflection on Center Highway -->
+  <polygon points="420,302 480,302 580,520 320,520" fill="url(#sunRoadReflect)"/>
 
-<!-- Converging lines (all from VP to bottom) — STATIC -->
-<!-- Color: electric blue #0055FF with pink outer accents -->
-<g stroke-linecap="round">
-  <!-- Outer edge lines (bright pink/magenta) -->
-  <line x1="450" y1="302" x2="0"   y2="520" stroke="#FF00CC" stroke-width="2"   opacity="0.6" filter="url(#f1)"/>
-  <line x1="450" y1="302" x2="900" y2="520" stroke="#FF00CC" stroke-width="2"   opacity="0.6" filter="url(#f1)"/>
-  <!-- Main grid lines (blue) -->
-  <line x1="450" y1="302" x2="45"  y2="520" stroke="#0055FF" stroke-width="1.2" opacity="0.55"/>
-  <line x1="450" y1="302" x2="135" y2="520" stroke="#0055FF" stroke-width="1"   opacity="0.5"/>
-  <line x1="450" y1="302" x2="225" y2="520" stroke="#0055FF" stroke-width="1"   opacity="0.5"/>
-  <line x1="450" y1="302" x2="315" y2="520" stroke="#0066FF" stroke-width="0.8" opacity="0.45"/>
-  <line x1="450" y1="302" x2="360" y2="520" stroke="#0066FF" stroke-width="0.7" opacity="0.4"/>
-  <line x1="450" y1="302" x2="405" y2="520" stroke="#0077FF" stroke-width="0.6" opacity="0.35"/>
-  <line x1="450" y1="302" x2="450" y2="520" stroke="#0077FF" stroke-width="0.6" opacity="0.35"/>
-  <line x1="450" y1="302" x2="495" y2="520" stroke="#0077FF" stroke-width="0.6" opacity="0.35"/>
-  <line x1="450" y1="302" x2="540" y2="520" stroke="#0066FF" stroke-width="0.7" opacity="0.4"/>
-  <line x1="450" y1="302" x2="585" y2="520" stroke="#0066FF" stroke-width="0.8" opacity="0.45"/>
-  <line x1="450" y1="302" x2="675" y2="520" stroke="#0055FF" stroke-width="1"   opacity="0.5"/>
-  <line x1="450" y1="302" x2="765" y2="520" stroke="#0055FF" stroke-width="1"   opacity="0.5"/>
-  <line x1="450" y1="302" x2="855" y2="520" stroke="#0055FF" stroke-width="1.2" opacity="0.55"/>
+  <!-- Static Perspective Horizontal Lines (Dense at horizon, expanding exponentially to foreground) -->
+  <g stroke-linecap="round">
+    <!-- Distant Horizon Compression Band (Lines 1 to 5) -->
+    <line x1="0" y1="303.5" x2="900" y2="303.5" stroke="#00E5FF" stroke-width="0.6" opacity="0.35"/>
+    <line x1="0" y1="305.5" x2="900" y2="305.5" stroke="#00E5FF" stroke-width="0.7" opacity="0.4"/>
+    <line x1="0" y1="308.0" x2="900" y2="308.0" stroke="#00E5FF" stroke-width="0.8" opacity="0.45"/>
+    <line x1="0" y1="311.5" x2="900" y2="311.5" stroke="#00E5FF" stroke-width="0.9" opacity="0.5"/>
+    <line x1="0" y1="315.5" x2="900" y2="315.5" stroke="#2288FF" stroke-width="1.0" opacity="0.55"/>
+    
+    <!-- Mid-Distance Perspective Transition (Lines 6 to 10) -->
+    <line x1="0" y1="320.5" x2="900" y2="320.5" stroke="#4477FF" stroke-width="1.1" opacity="0.6"/>
+    <line x1="0" y1="326.5" x2="900" y2="326.5" stroke="#7744FF" stroke-width="1.2" opacity="0.62"/>
+    <line x1="0" y1="334.0" x2="900" y2="334.0" stroke="#AA22FF" stroke-width="1.3" opacity="0.65"/>
+    <line x1="0" y1="343.0" x2="900" y2="343.0" stroke="#DD11EE" stroke-width="1.4" opacity="0.68"/>
+    <line x1="0" y1="353.5" x2="900" y2="353.5" stroke="#FF00CC" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Near Foreground Perspective Lines (Lines 11 to 17) -->
+    <line x1="0" y1="366.0" x2="900" y2="366.0" stroke="#FF00BB" stroke-width="1.7" opacity="0.75"/>
+    <line x1="0" y1="381.0" x2="900" y2="381.0" stroke="#FF00BB" stroke-width="1.9" opacity="0.8"/>
+    <line x1="0" y1="399.0" x2="900" y2="399.0" stroke="#FF00BB" stroke-width="2.2" opacity="0.85"/>
+    <line x1="0" y1="421.0" x2="900" y2="421.0" stroke="#FF00AA" stroke-width="2.5" opacity="0.88"/>
+    <line x1="0" y1="448.0" x2="900" y2="448.0" stroke="#FF0099" stroke-width="2.9" opacity="0.9"/>
+    <line x1="0" y1="480.0" x2="900" y2="480.0" stroke="#FF0088" stroke-width="3.4" opacity="0.92"/>
+    <line x1="0" y1="516.0" x2="900" y2="516.0" stroke="#FF0077" stroke-width="4.0" opacity="0.95"/>
+  </g>
+
+  <!-- Longitudinal Converging Grid Lines (Vanishing Point = 450, 302) -->
+  <g stroke-linecap="round">
+    <!-- Side floor lines radiating outward to canvas borders for wide 3D floor effect -->
+    <line x1="450" y1="302" x2="0"   y2="340" stroke="#0044BB" stroke-width="0.9" opacity="0.45"/>
+    <line x1="450" y1="302" x2="0"   y2="390" stroke="#0055DD" stroke-width="1.0" opacity="0.5"/>
+    <line x1="450" y1="302" x2="0"   y2="455" stroke="#0066FF" stroke-width="1.1" opacity="0.55"/>
+
+    <line x1="450" y1="302" x2="900" y2="340" stroke="#0044BB" stroke-width="0.9" opacity="0.45"/>
+    <line x1="450" y1="302" x2="900" y2="390" stroke="#0055DD" stroke-width="1.0" opacity="0.5"/>
+    <line x1="450" y1="302" x2="900" y2="455" stroke="#0066FF" stroke-width="1.1" opacity="0.55"/>
+
+    <!-- Bottom radiating lines across the road width -->
+    <line x1="450" y1="302" x2="65"  y2="520" stroke="#0066FF" stroke-width="1.2" opacity="0.55"/>
+    <line x1="450" y1="302" x2="140" y2="520" stroke="#0077FF" stroke-width="1.2" opacity="0.55"/>
+    <line x1="450" y1="302" x2="220" y2="520" stroke="#0088FF" stroke-width="1.3" opacity="0.58"/>
+    <line x1="450" y1="302" x2="295" y2="520" stroke="#0099FF" stroke-width="1.3" opacity="0.6"/>
+    <line x1="450" y1="302" x2="360" y2="520" stroke="#00AAFF" stroke-width="1.4" opacity="0.62"/>
+    <line x1="450" y1="302" x2="410" y2="520" stroke="#00C2FF" stroke-width="1.5" opacity="0.65"/>
+    
+    <!-- Center Line -->
+    <line x1="450" y1="302" x2="450" y2="520" stroke="#00D4FF" stroke-width="1.6" opacity="0.7"/>
+
+    <line x1="450" y1="302" x2="490" y2="520" stroke="#00C2FF" stroke-width="1.5" opacity="0.65"/>
+    <line x1="450" y1="302" x2="540" y2="520" stroke="#00AAFF" stroke-width="1.4" opacity="0.62"/>
+    <line x1="450" y1="302" x2="605" y2="520" stroke="#0099FF" stroke-width="1.3" opacity="0.6"/>
+    <line x1="450" y1="302" x2="680" y2="520" stroke="#0088FF" stroke-width="1.3" opacity="0.58"/>
+    <line x1="450" y1="302" x2="760" y2="520" stroke="#0077FF" stroke-width="1.2" opacity="0.55"/>
+    <line x1="450" y1="302" x2="835" y2="520" stroke="#0066FF" stroke-width="1.2" opacity="0.55"/>
+  </g>
+
+  <!-- ── VIBRANT SIDE NEON HIGHWAY RAILS (Defines the Vanishing Perspective Corridor) ── -->
+  <!-- Left Side Neon Guide Rail -->
+  <line x1="450" y1="302" x2="0" y2="520" stroke="#00FFFF" stroke-width="7" opacity="0.32" filter="url(#f2)"/>
+  <line x1="450" y1="302" x2="0" y2="520" stroke="#FF0099" stroke-width="3" opacity="0.88" filter="url(#f1)"/>
+  <line x1="450" y1="302" x2="0" y2="520" stroke="#FFFFFF" stroke-width="1.3" opacity="0.95"/>
+
+  <!-- Right Side Neon Guide Rail -->
+  <line x1="450" y1="302" x2="900" y2="520" stroke="#00FFFF" stroke-width="7" opacity="0.32" filter="url(#f2)"/>
+  <line x1="450" y1="302" x2="900" y2="520" stroke="#FF0099" stroke-width="3" opacity="0.88" filter="url(#f1)"/>
+  <line x1="450" y1="302" x2="900" y2="520" stroke="#FFFFFF" stroke-width="1.3" opacity="0.95"/>
+
+  <!-- ── DYNAMIC FORWARD-TRAVELING PERSPECTIVE PULSE WAVES ── -->
+  <!-- Smooth high-speed motion feel with exponential perspective acceleration -->
+  <line stroke="#00F0FF" stroke-linecap="round">
+    <animate attributeName="x1" from="448" to="0"   dur="2.4s" begin="0s"      repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="2.4s" begin="0s"      repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="x2" from="452" to="900" dur="2.4s" begin="0s"      repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="2.4s" begin="0s"      repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="stroke-width" values="0.8;1.5;3.2;5" keyTimes="0;0.25;0.7;1" dur="2.4s" begin="0s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.7;0.6;0" keyTimes="0;0.1;0.8;1" dur="2.4s" begin="0s" repeatCount="indefinite"/>
+  </line>
+  <line stroke="#00F0FF" stroke-linecap="round">
+    <animate attributeName="x1" from="448" to="0"   dur="2.4s" begin="0.6s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="2.4s" begin="0.6s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="x2" from="452" to="900" dur="2.4s" begin="0.6s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="2.4s" begin="0.6s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="stroke-width" values="0.8;1.5;3.2;5" keyTimes="0;0.25;0.7;1" dur="2.4s" begin="0.6s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.7;0.6;0" keyTimes="0;0.1;0.8;1" dur="2.4s" begin="0.6s" repeatCount="indefinite"/>
+  </line>
+  <line stroke="#00F0FF" stroke-linecap="round">
+    <animate attributeName="x1" from="448" to="0"   dur="2.4s" begin="1.2s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="2.4s" begin="1.2s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="x2" from="452" to="900" dur="2.4s" begin="1.2s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="2.4s" begin="1.2s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="stroke-width" values="0.8;1.5;3.2;5" keyTimes="0;0.25;0.7;1" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.7;0.6;0" keyTimes="0;0.1;0.8;1" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+  </line>
+  <line stroke="#00F0FF" stroke-linecap="round">
+    <animate attributeName="x1" from="448" to="0"   dur="2.4s" begin="1.8s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="2.4s" begin="1.8s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="x2" from="452" to="900" dur="2.4s" begin="1.8s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="2.4s" begin="1.8s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="stroke-width" values="0.8;1.5;3.2;5" keyTimes="0;0.25;0.7;1" dur="2.4s" begin="1.8s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.7;0.6;0" keyTimes="0;0.1;0.8;1" dur="2.4s" begin="1.8s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Road center marking (white dashes accelerating forward into car diffuser) -->
+  <line stroke="white" stroke-linecap="round">
+    <animate attributeName="x1" from="449" to="424" dur="2.0s" begin="0s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y1" from="304" to="520" dur="2.0s" begin="0s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="x2" from="451" to="476" dur="2.0s" begin="0s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y2" from="304" to="520" dur="2.0s" begin="0s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="stroke-width" values="1;2;5;9" keyTimes="0;0.2;0.7;1" dur="2.0s" begin="0s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.8;0.7;0" keyTimes="0;0.08;0.8;1" dur="2.0s" begin="0s" repeatCount="indefinite"/>
+  </line>
+  <line stroke="white" stroke-linecap="round">
+    <animate attributeName="x1" from="449" to="424" dur="2.0s" begin="0.66s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y1" from="304" to="520" dur="2.0s" begin="0.66s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="x2" from="451" to="476" dur="2.0s" begin="0.66s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y2" from="304" to="520" dur="2.0s" begin="0.66s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="stroke-width" values="1;2;5;9" keyTimes="0;0.2;0.7;1" dur="2.0s" begin="0.66s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.8;0.7;0" keyTimes="0;0.08;0.8;1" dur="2.0s" begin="0.66s" repeatCount="indefinite"/>
+  </line>
+  <line stroke="white" stroke-linecap="round">
+    <animate attributeName="x1" from="449" to="424" dur="2.0s" begin="1.33s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y1" from="304" to="520" dur="2.0s" begin="1.33s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="x2" from="451" to="476" dur="2.0s" begin="1.33s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="y2" from="304" to="520" dur="2.0s" begin="1.33s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
+    <animate attributeName="stroke-width" values="1;2;5;9" keyTimes="0;0.2;0.7;1" dur="2.0s" begin="1.33s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.8;0.7;0" keyTimes="0;0.08;0.8;1" dur="2.0s" begin="1.33s" repeatCount="indefinite"/>
+  </line>
 </g>
-
-<!-- ANIMATED HORIZONTAL GRID LINES -->
-<!-- Each expands from VP point to full width as it moves toward viewer -->
-<!-- 8 lines cycling, dur=2.2s, staggered by 0.275s -->
-<!-- Easing: slow at top (far), fast at bottom (near) = perspective effect -->
-
-<line stroke="#2266FF" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="0"  dur="2.2s" begin="0s"      repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y1" from="302" to="520" dur="2.2s" begin="0s"      repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="x2" from="451" to="900" dur="2.2s" begin="0s"      repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y2" from="302" to="520" dur="2.2s" begin="0s"      repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="stroke-width" values="0.5;1;2.5;4"   keyTimes="0;0.2;0.7;1" dur="2.2s" begin="0s"      repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.6;0.5;0" keyTimes="0;0.08;0.75;1" dur="2.2s" begin="0s"    repeatCount="indefinite"/>
-</line>
-<line stroke="#2266FF" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="0"  dur="2.2s" begin="0.275s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y1" from="302" to="520" dur="2.2s" begin="0.275s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="x2" from="451" to="900" dur="2.2s" begin="0.275s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y2" from="302" to="520" dur="2.2s" begin="0.275s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="stroke-width" values="0.5;1;2.5;4"   keyTimes="0;0.2;0.7;1" dur="2.2s" begin="0.275s"  repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.6;0.5;0" keyTimes="0;0.08;0.75;1" dur="2.2s" begin="0.275s" repeatCount="indefinite"/>
-</line>
-<line stroke="#2266FF" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="0"  dur="2.2s" begin="0.55s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y1" from="302" to="520" dur="2.2s" begin="0.55s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="x2" from="451" to="900" dur="2.2s" begin="0.55s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y2" from="302" to="520" dur="2.2s" begin="0.55s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="stroke-width" values="0.5;1;2.5;4"   keyTimes="0;0.2;0.7;1" dur="2.2s" begin="0.55s"   repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.6;0.5;0" keyTimes="0;0.08;0.75;1" dur="2.2s" begin="0.55s"  repeatCount="indefinite"/>
-</line>
-<line stroke="#2266FF" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="0"  dur="2.2s" begin="0.825s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y1" from="302" to="520" dur="2.2s" begin="0.825s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="x2" from="451" to="900" dur="2.2s" begin="0.825s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y2" from="302" to="520" dur="2.2s" begin="0.825s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="stroke-width" values="0.5;1;2.5;4"   keyTimes="0;0.2;0.7;1" dur="2.2s" begin="0.825s"  repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.6;0.5;0" keyTimes="0;0.08;0.75;1" dur="2.2s" begin="0.825s" repeatCount="indefinite"/>
-</line>
-<line stroke="#2266FF" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="0"  dur="2.2s" begin="1.1s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y1" from="302" to="520" dur="2.2s" begin="1.1s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="x2" from="451" to="900" dur="2.2s" begin="1.1s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y2" from="302" to="520" dur="2.2s" begin="1.1s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="stroke-width" values="0.5;1;2.5;4"   keyTimes="0;0.2;0.7;1" dur="2.2s" begin="1.1s"    repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.6;0.5;0" keyTimes="0;0.08;0.75;1" dur="2.2s" begin="1.1s"   repeatCount="indefinite"/>
-</line>
-<line stroke="#2266FF" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="0"  dur="2.2s" begin="1.375s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y1" from="302" to="520" dur="2.2s" begin="1.375s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="x2" from="451" to="900" dur="2.2s" begin="1.375s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y2" from="302" to="520" dur="2.2s" begin="1.375s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="stroke-width" values="0.5;1;2.5;4"   keyTimes="0;0.2;0.7;1" dur="2.2s" begin="1.375s"  repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.6;0.5;0" keyTimes="0;0.08;0.75;1" dur="2.2s" begin="1.375s" repeatCount="indefinite"/>
-</line>
-<line stroke="#2266FF" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="0"  dur="2.2s" begin="1.65s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y1" from="302" to="520" dur="2.2s" begin="1.65s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="x2" from="451" to="900" dur="2.2s" begin="1.65s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y2" from="302" to="520" dur="2.2s" begin="1.65s"   repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="stroke-width" values="0.5;1;2.5;4"   keyTimes="0;0.2;0.7;1" dur="2.2s" begin="1.65s"   repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.6;0.5;0" keyTimes="0;0.08;0.75;1" dur="2.2s" begin="1.65s"  repeatCount="indefinite"/>
-</line>
-<line stroke="#2266FF" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="0"  dur="2.2s" begin="1.925s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y1" from="302" to="520" dur="2.2s" begin="1.925s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="x2" from="451" to="900" dur="2.2s" begin="1.925s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="y2" from="302" to="520" dur="2.2s" begin="1.925s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-  <animate attributeName="stroke-width" values="0.5;1;2.5;4"   keyTimes="0;0.2;0.7;1" dur="2.2s" begin="1.925s"  repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.6;0.5;0" keyTimes="0;0.08;0.75;1" dur="2.2s" begin="1.925s" repeatCount="indefinite"/>
-</line>
-
-<!-- Road center marking (white dashes converging to VP) -->
-<line stroke="white" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="426" dur="2.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="y1" from="310" to="520"  dur="2.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="x2" from="451" to="474"  dur="2.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="y2" from="310" to="520"  dur="2.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="stroke-width" values="1;2;6;10"     keyTimes="0;0.2;0.7;1" dur="2.8s" begin="0s"    repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.5;0.45;0" keyTimes="0;0.08;0.8;1" dur="2.8s" begin="0s"  repeatCount="indefinite"/>
-</line>
-<line stroke="white" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="426" dur="2.8s" begin="0.93s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="y1" from="310" to="520"  dur="2.8s" begin="0.93s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="x2" from="451" to="474"  dur="2.8s" begin="0.93s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="y2" from="310" to="520"  dur="2.8s" begin="0.93s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="stroke-width" values="1;2;6;10"     keyTimes="0;0.2;0.7;1" dur="2.8s" begin="0.93s"  repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.5;0.45;0" keyTimes="0;0.08;0.8;1" dur="2.8s" begin="0.93s" repeatCount="indefinite"/>
-</line>
-<line stroke="white" stroke-opacity="0">
-  <animate attributeName="x1" from="449" to="426" dur="2.8s" begin="1.87s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="y1" from="310" to="520"  dur="2.8s" begin="1.87s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="x2" from="451" to="474"  dur="2.8s" begin="1.87s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="y2" from="310" to="520"  dur="2.8s" begin="1.87s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.25 0 0.85 1"/>
-  <animate attributeName="stroke-width" values="1;2;6;10"     keyTimes="0;0.2;0.7;1" dur="2.8s" begin="1.87s"  repeatCount="indefinite"/>
-  <animate attributeName="stroke-opacity" values="0;0.5;0.45;0" keyTimes="0;0.08;0.8;1" dur="2.8s" begin="1.87s" repeatCount="indefinite"/>
-</line>
 
 <!-- ═══════════ CAR ═══════════ -->
 <!-- Rear view, centered, classic 80s sports car -->
