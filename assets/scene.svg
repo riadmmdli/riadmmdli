@@ -7,16 +7,21 @@
     <stop offset="100%" stop-color="#380070"/>
   </linearGradient>
 
-  <radialGradient id="sunCore" cx="50%" cy="50%" r="50%">
-    <stop offset="0%"   stop-color="#FFCCEE"/>
-    <stop offset="40%"  stop-color="#FF3388"/>
-    <stop offset="100%" stop-color="#CC0055"/>
-  </radialGradient>
+  <!-- Retrowave Sun Core: Pastel Cyan (#72E8FF) to Hot Pink (#FF1A95) -->
+  <linearGradient id="sunCore" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#72E8FF"/>
+    <stop offset="28%"  stop-color="#6AE2FF"/>
+    <stop offset="55%"  stop-color="#BD59ED"/>
+    <stop offset="78%"  stop-color="#E830B5"/>
+    <stop offset="100%" stop-color="#FF1A95"/>
+  </linearGradient>
 
+  <!-- Radiant Soft Sun Halo -->
   <radialGradient id="sunHalo" cx="50%" cy="50%" r="50%">
-    <stop offset="0%"   stop-color="#FF2288" stop-opacity="0.6"/>
-    <stop offset="55%"  stop-color="#AA0055" stop-opacity="0.2"/>
-    <stop offset="100%" stop-color="#880033" stop-opacity="0"/>
+    <stop offset="0%"   stop-color="#E514BF" stop-opacity="0.7"/>
+    <stop offset="38%"  stop-color="#B80E9E" stop-opacity="0.35"/>
+    <stop offset="72%"  stop-color="#75007D" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#300045" stop-opacity="0"/>
   </radialGradient>
 
   <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
@@ -44,10 +49,24 @@
     <stop offset="100%" stop-color="#FF0033" stop-opacity="0"/>
   </radialGradient>
 
-  <!-- Sun clip: only show above horizon -->
+  <!-- Sun clip: clip at horizon y=302 -->
   <clipPath id="sunC">
-    <rect x="250" y="80" width="400" height="225"/>
+    <rect x="0" y="0" width="900" height="302"/>
   </clipPath>
+
+  <!-- Sun retro horizontal stripes mask (progressive slice spacing) -->
+  <mask id="sunMask">
+    <rect x="0" y="0" width="900" height="520" fill="#FFFFFF"/>
+    <rect x="250" y="116" width="400" height="2.5" fill="#000000"/>
+    <rect x="250" y="128" width="400" height="3.5" fill="#000000"/>
+    <rect x="250" y="142" width="400" height="4.5" fill="#000000"/>
+    <rect x="250" y="158" width="400" height="6.0" fill="#000000"/>
+    <rect x="250" y="177" width="400" height="7.5" fill="#000000"/>
+    <rect x="250" y="199" width="400" height="9.5" fill="#000000"/>
+    <rect x="250" y="224" width="400" height="12.0" fill="#000000"/>
+    <rect x="250" y="252" width="400" height="15.0" fill="#000000"/>
+    <rect x="250" y="284" width="400" height="18.0" fill="#000000"/>
+  </mask>
 
   <!-- Glow filters -->
   <filter id="f1" x="-40%" y="-40%" width="180%" height="180%">
@@ -144,24 +163,15 @@
 <circle cx="430" cy="58" r="1"   fill="#FFF" opacity="0.25"/>
 <circle cx="740" cy="60" r="1"   fill="#FFF" opacity="0.3"/>
 
-<!-- ═══════════ SUN ═══════════ -->
-<!-- Outer mega-glow -->
-<circle cx="450" cy="218" r="180" fill="url(#sunHalo)">
-  <animate attributeName="r"       values="180;192;180" dur="3s" repeatCount="indefinite"/>
-  <animate attributeName="opacity" values="0.85;1;0.85"  dur="3s" repeatCount="indefinite"/>
+<!-- ═══════════ RETROWAVE SUN ═══════════ -->
+<!-- Radiant Soft Magenta/Purple Halo -->
+<circle cx="450" cy="180" r="190" fill="url(#sunHalo)">
+  <animate attributeName="r"       values="190;202;190" dur="3.5s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0.85;1;0.85" dur="3.5s" repeatCount="indefinite"/>
 </circle>
-<!-- Sun body + stripes (clipped above horizon) -->
-<g clip-path="url(#sunC)">
-  <!-- Sun disc -->
-  <circle cx="450" cy="218" r="118" fill="url(#sunCore)">
-    <animate attributeName="opacity" values="0.92;1;0.92" dur="2.5s" repeatCount="indefinite"/>
-  </circle>
-  <!-- Horizontal stripe bands (retro synthwave look) -->
-  <rect x="332" y="233" width="236" height="5"  fill="#180035" opacity="0.9"/>
-  <rect x="332" y="244" width="236" height="6"  fill="#180035" opacity="0.9"/>
-  <rect x="332" y="256" width="236" height="7"  fill="#180035" opacity="0.9"/>
-  <rect x="332" y="270" width="236" height="8"  fill="#180035" opacity="0.9"/>
-  <rect x="332" y="285" width="236" height="10" fill="#180035" opacity="0.9"/>
+<!-- Sun Disc (Pastel Cyan to Electric Pink with horizontal retro cuts) -->
+<g clip-path="url(#sunC)" mask="url(#sunMask)">
+  <circle cx="450" cy="180" r="142" fill="url(#sunCore)"/>
 </g>
 
 <!-- ═══════════ WIREFRAME MOUNTAINS ═══════════ -->
