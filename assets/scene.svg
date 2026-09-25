@@ -496,25 +496,6 @@
 <rect x="40" y="270" width="820" height="32" fill="url(#cityBaseHaze)"/>
 
 
-<!-- Palm trees (silhouette left) -->
-<g fill="none" stroke="#040010" stroke-linecap="round">
-  <path d="M 32,302 Q 35,272 38,252" stroke-width="5"/>
-  <path d="M 38,252 Q 14,232  -5,240" stroke-width="8"/>
-  <path d="M 38,252 Q 22,225  4,220"  stroke-width="6"/>
-  <path d="M 38,252 Q 44,222 52,218"  stroke-width="6"/>
-  <path d="M 38,252 Q 56,234 72,238"  stroke-width="7"/>
-  <path d="M 38,252 Q 58,245 74,252"  stroke-width="5"/>
-</g>
-<!-- Palm trees (silhouette right) -->
-<g fill="none" stroke="#040010" stroke-linecap="round">
-  <path d="M 868,302 Q 865,272 862,252" stroke-width="5"/>
-  <path d="M 862,252 Q 886,232 905,240" stroke-width="8"/>
-  <path d="M 862,252 Q 878,225 896,220" stroke-width="6"/>
-  <path d="M 862,252 Q 856,222 848,218" stroke-width="6"/>
-  <path d="M 862,252 Q 844,234 828,238" stroke-width="7"/>
-  <path d="M 862,252 Q 842,245 826,252" stroke-width="5"/>
-</g>
-
 <!-- Horizon atmospheric glow -->
 <ellipse cx="450" cy="302" rx="500" ry="42" fill="url(#horizPink)"/>
 <rect x="0" y="298" width="900" height="6" fill="#FF00AA" opacity="0.2" filter="url(#f2)">
@@ -647,6 +628,184 @@
   <animate attributeName="stroke-opacity" values="0;0.5;0.45;0" keyTimes="0;0.08;0.8;1" dur="2.8s" begin="1.87s" repeatCount="indefinite"/>
 </line>
 
+<!-- ═══════════ ROADSIDE SCENERY (NEON PALMS, STREETLAMPS, BILLBOARDS) ═══════════ -->
+
+<!-- Digital Side Terrain Wireframe Grid (Fills Left & Right Horizons) -->
+<g stroke="#380066" stroke-width="0.8" opacity="0.6">
+  <!-- Left Side Terrain Grid -->
+  <line x1="0" y1="320" x2="350" y2="304"/>
+  <line x1="0" y1="345" x2="280" y2="310"/>
+  <line x1="0" y1="375" x2="200" y2="320"/>
+  <line x1="0" y1="410" x2="130" y2="335"/>
+  <!-- Left Cross Grid lines -->
+  <line x1="60"  y1="302" x2="20"  y2="420"/>
+  <line x1="120" y1="302" x2="60"  y2="420"/>
+  <line x1="180" y1="302" x2="110" y2="400"/>
+  <line x1="240" y1="302" x2="170" y2="380"/>
+
+  <!-- Right Side Terrain Grid -->
+  <line x1="900" y1="320" x2="550" y2="304"/>
+  <line x1="900" y1="345" x2="620" y2="310"/>
+  <line x1="900" y1="375" x2="700" y2="320"/>
+  <line x1="900" y1="410" x2="770" y2="335"/>
+  <!-- Right Cross Grid lines -->
+  <line x1="840" y1="302" x2="880" y2="420"/>
+  <line x1="780" y1="302" x2="840" y2="420"/>
+  <line x1="720" y1="302" x2="790" y2="400"/>
+  <line x1="660" y1="302" x2="730" y2="380"/>
+</g>
+
+<!-- Highway Shoulder Neon Reflectors / Guardrail Cat's Eyes -->
+<g>
+  <!-- Left Highway Markers -->
+  <circle cx="310" cy="320" r="1.5" fill="#00FFFF" opacity="0.6"/>
+  <circle cx="260" cy="345" r="2"   fill="#FF00AA" opacity="0.7"/>
+  <circle cx="205" cy="375" r="2.5" fill="#00FFFF" opacity="0.75"/>
+  <circle cx="145" cy="410" r="3"   fill="#FF00AA" opacity="0.8"/>
+  <circle cx="80"  cy="450" r="3.5" fill="#00FFFF" opacity="0.85"/>
+  <circle cx="15"  cy="495" r="4"   fill="#FF00AA" opacity="0.9"/>
+  <!-- Right Highway Markers -->
+  <circle cx="590" cy="320" r="1.5" fill="#00FFFF" opacity="0.6"/>
+  <circle cx="640" cy="345" r="2"   fill="#FF00AA" opacity="0.7"/>
+  <circle cx="695" cy="375" r="2.5" fill="#00FFFF" opacity="0.75"/>
+  <circle cx="755" cy="410" r="3"   fill="#FF00AA" opacity="0.8"/>
+  <circle cx="820" cy="450" r="3.5" fill="#00FFFF" opacity="0.85"/>
+  <circle cx="885" cy="495" r="4"   fill="#FF00AA" opacity="0.9"/>
+</g>
+
+<!-- Roadside Cyberpunk Neon Billboards on Stilts -->
+<!-- Left Billboard: "OUTRUN HIGHWAY 84" -->
+<g>
+  <!-- Stilts -->
+  <line x1="42" y1="384" x2="42" y2="425" stroke="#331155" stroke-width="2"/>
+  <line x1="88" y1="384" x2="88" y2="425" stroke="#331155" stroke-width="2"/>
+  <line x1="42" y1="390" x2="88" y2="420" stroke="#220044" stroke-width="1"/>
+  <line x1="88" y1="390" x2="42" y2="420" stroke="#220044" stroke-width="1"/>
+  <!-- Board Backing -->
+  <rect x="22" y="340" width="86" height="44" rx="3" fill="#060015" stroke="#00FFFF" stroke-width="1.5" filter="url(#f1)">
+    <animate attributeName="stroke" values="#00FFFF;#FF00AA;#00FFFF" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="25" y="343" width="80" height="38" rx="2" fill="#02000A" stroke="#FF0088" stroke-width="0.8"/>
+  <!-- Billboard Text & Art -->
+  <text x="65" y="358" fill="#00FFFF" font-family="'Courier New', monospace" font-size="9" font-weight="900" text-anchor="middle" letter-spacing="1">★ OUTRUN ★</text>
+  <text x="65" y="372" fill="#FF00AA" font-family="'Courier New', monospace" font-size="7" font-weight="bold" text-anchor="middle">HIGHWAY 84</text>
+  <ellipse cx="65" cy="384" rx="22" ry="2" fill="#00FFFF" opacity="0.4" filter="url(#f1)"/>
+</g>
+
+<!-- Right Billboard: "SYNTH CITY" -->
+<g>
+  <!-- Stilts -->
+  <line x1="812" y1="384" x2="812" y2="425" stroke="#331155" stroke-width="2"/>
+  <line x1="858" y1="384" x2="858" y2="425" stroke="#331155" stroke-width="2"/>
+  <line x1="812" y1="390" x2="858" y2="420" stroke="#220044" stroke-width="1"/>
+  <line x1="858" y1="390" x2="812" y2="420" stroke="#220044" stroke-width="1"/>
+  <!-- Board Backing -->
+  <rect x="792" y="340" width="86" height="44" rx="3" fill="#060015" stroke="#FF00AA" stroke-width="1.5" filter="url(#f1)">
+    <animate attributeName="stroke" values="#FF00AA;#00FFFF;#FF00AA" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="795" y="343" width="80" height="38" rx="2" fill="#02000A" stroke="#00FFFF" stroke-width="0.8"/>
+  <!-- Billboard Text & Art -->
+  <text x="835" y="358" fill="#FF00AA" font-family="'Courier New', monospace" font-size="9" font-weight="900" text-anchor="middle" letter-spacing="1">SYNTH CITY</text>
+  <text x="835" y="372" fill="#00FFFF" font-family="'Courier New', monospace" font-size="7" font-weight="bold" text-anchor="middle">NO LIMITS</text>
+  <ellipse cx="835" cy="384" rx="22" ry="2" fill="#FF00AA" opacity="0.4" filter="url(#f1)"/>
+</g>
+
+<!-- Highway Curved Streetlamps (Left & Right Shoulders) -->
+<g>
+  <!-- Left Streetlamp Near (x=70) -->
+  <path d="M 68,495 L 68,425 Q 68,398 108,398" fill="none" stroke="#280055" stroke-width="2.2" stroke-linecap="round"/>
+  <ellipse cx="108" cy="400" rx="5" ry="2" fill="#00FFFF" filter="url(#f1)"/>
+  <polygon points="108,400 60,515 160,515" fill="#00FFFF" opacity="0.04"/>
+
+  <!-- Left Streetlamp Mid (x=195) -->
+  <path d="M 195,410 L 195,355 Q 195,335 228,335" fill="none" stroke="#220048" stroke-width="1.8" stroke-linecap="round"/>
+  <ellipse cx="228" cy="336" rx="4" ry="1.6" fill="#00FFFF" filter="url(#f1)"/>
+  <polygon points="228,336 185,430 270,430" fill="#00FFFF" opacity="0.035"/>
+
+  <!-- Right Streetlamp Near (x=832) -->
+  <path d="M 832,495 L 832,425 Q 832,398 792,398" fill="none" stroke="#280055" stroke-width="2.2" stroke-linecap="round"/>
+  <ellipse cx="792" cy="400" rx="5" ry="2" fill="#FF00AA" filter="url(#f1)"/>
+  <polygon points="792,400 740,515 840,515" fill="#FF00AA" opacity="0.04"/>
+
+  <!-- Right Streetlamp Mid (x=705) -->
+  <path d="M 705,410 L 705,355 Q 705,335 672,335" fill="none" stroke="#220048" stroke-width="1.8" stroke-linecap="round"/>
+  <ellipse cx="672" cy="336" rx="4" ry="1.6" fill="#FF00AA" filter="url(#f1)"/>
+  <polygon points="672,336 630,430 715,430" fill="#FF00AA" opacity="0.035"/>
+</g>
+
+<!-- Luminous Synthwave Palm Tree Avenue (Perspective Boulevard) -->
+<g fill="none" stroke-linecap="round">
+  <!-- LEFT PALMS -->
+  <!-- Left Palm 1: Near & Grand (x=40, base y=515) -->
+  <g>
+    <!-- Trunk -->
+    <path d="M 40,515 Q 48,435 34,365" stroke="#FF0088" stroke-width="4.5" filter="url(#f1)"/>
+    <path d="M 40,515 Q 48,435 34,365" stroke="#FFAACC" stroke-width="2"/>
+    <!-- Fronds -->
+    <path d="M 34,365 Q 8,335 -15,360" stroke="#00FFFF" stroke-width="3" filter="url(#f1)"/>
+    <path d="M 34,365 Q 20,325 -4,330"  stroke="#FF00AA" stroke-width="2.5"/>
+    <path d="M 34,365 Q 44,312 62,312"  stroke="#00FFFF" stroke-width="2.5"/>
+    <path d="M 34,365 Q 60,332 86,348"  stroke="#FF00AA" stroke-width="3" filter="url(#f1)"/>
+    <path d="M 34,365 Q 62,352 82,370"  stroke="#00FFFF" stroke-width="2.5"/>
+    <path d="M 34,365 Q 42,352 50,388"  stroke="#FF00AA" stroke-width="2"/>
+  </g>
+
+  <!-- Left Palm 2: Mid (x=165, base y=425) -->
+  <g>
+    <path d="M 165,425 Q 170,370 156,325" stroke="#FF0088" stroke-width="3"/>
+    <path d="M 165,425 Q 170,370 156,325" stroke="#FFAACC" stroke-width="1.2"/>
+    <path d="M 156,325 Q 135,305 118,322" stroke="#00FFFF" stroke-width="2"/>
+    <path d="M 156,325 Q 146,298 128,302" stroke="#FF00AA" stroke-width="1.8"/>
+    <path d="M 156,325 Q 164,288 178,288" stroke="#00FFFF" stroke-width="1.8"/>
+    <path d="M 156,325 Q 176,302 195,315" stroke="#FF00AA" stroke-width="2"/>
+    <path d="M 156,325 Q 176,316 190,330" stroke="#00FFFF" stroke-width="1.8"/>
+  </g>
+
+  <!-- Left Palm 3: Far (x=272, base y=360) -->
+  <g opacity="0.8">
+    <path d="M 272,360 Q 275,332 266,310" stroke="#AA0066" stroke-width="1.8"/>
+    <path d="M 266,310 Q 252,295 240,306" stroke="#00FFFF" stroke-width="1.2"/>
+    <path d="M 266,310 Q 260,290 248,294" stroke="#FF00AA" stroke-width="1.2"/>
+    <path d="M 266,310 Q 272,284 282,285" stroke="#00FFFF" stroke-width="1.2"/>
+    <path d="M 266,310 Q 280,295 294,304" stroke="#FF00AA" stroke-width="1.2"/>
+  </g>
+
+  <!-- RIGHT PALMS -->
+  <!-- Right Palm 1: Near & Grand (x=860, base y=515) -->
+  <g>
+    <!-- Trunk -->
+    <path d="M 860,515 Q 852,435 866,365" stroke="#FF0088" stroke-width="4.5" filter="url(#f1)"/>
+    <path d="M 860,515 Q 852,435 866,365" stroke="#FFAACC" stroke-width="2"/>
+    <!-- Fronds -->
+    <path d="M 866,365 Q 892,335 915,360" stroke="#00FFFF" stroke-width="3" filter="url(#f1)"/>
+    <path d="M 866,365 Q 880,325 904,330" stroke="#FF00AA" stroke-width="2.5"/>
+    <path d="M 866,365 Q 856,312 838,312" stroke="#00FFFF" stroke-width="2.5"/>
+    <path d="M 866,365 Q 840,332 814,348" stroke="#FF00AA" stroke-width="3" filter="url(#f1)"/>
+    <path d="M 866,365 Q 838,352 818,370" stroke="#00FFFF" stroke-width="2.5"/>
+    <path d="M 866,365 Q 858,352 850,388" stroke="#FF00AA" stroke-width="2"/>
+  </g>
+
+  <!-- Right Palm 2: Mid (x=735, base y=425) -->
+  <g>
+    <path d="M 735,425 Q 730,370 744,325" stroke="#FF0088" stroke-width="3"/>
+    <path d="M 735,425 Q 730,370 744,325" stroke="#FFAACC" stroke-width="1.2"/>
+    <path d="M 744,325 Q 765,305 782,322" stroke="#00FFFF" stroke-width="2"/>
+    <path d="M 744,325 Q 754,298 772,302" stroke="#FF00AA" stroke-width="1.8"/>
+    <path d="M 744,325 Q 736,288 722,288" stroke="#00FFFF" stroke-width="1.8"/>
+    <path d="M 744,325 Q 724,302 705,315" stroke="#FF00AA" stroke-width="2"/>
+    <path d="M 744,325 Q 724,316 710,330" stroke="#00FFFF" stroke-width="1.8"/>
+  </g>
+
+  <!-- Right Palm 3: Far (x=628, base y=360) -->
+  <g opacity="0.8">
+    <path d="M 628,360 Q 625,332 634,310" stroke="#AA0066" stroke-width="1.8"/>
+    <path d="M 634,310 Q 648,295 660,306" stroke="#00FFFF" stroke-width="1.2"/>
+    <path d="M 634,310 Q 640,290 652,294" stroke="#FF00AA" stroke-width="1.2"/>
+    <path d="M 634,310 Q 628,284 618,285" stroke="#00FFFF" stroke-width="1.2"/>
+    <path d="M 634,310 Q 620,295 606,304" stroke="#FF00AA" stroke-width="1.2"/>
+  </g>
+</g>
+
 <!-- ═══════════ CAR ═══════════ -->
 <!-- Rear view, centered, classic 80s sports car -->
 <!-- Car bottom at y=500, width ~250px, center x=450 -->
@@ -669,12 +828,20 @@
 </ellipse>
 
 <!-- ── CAR BODY ── -->
-<!-- Layer 1: Bumper/bottom -->
-<path d="M 328,500 L 334,486 L 566,486 L 572,500 Z" fill="#0C0020" stroke="#280050" stroke-width="1"/>
-<!-- Layer 2: Body lower (with wheel arch gaps) -->
-<path d="M 334,486 L 340,470 L 400,470 L 400,474 Q 400,486 375,486 Q 352,486 348,474 L 348,470 L 400,470 M 400,470 L 500,470 L 500,474 Q 500,486 525,486 Q 548,486 552,474 L 552,470 L 560,470 L 566,486 Z" fill="#0A001C"/>
-<!-- Simpler body approach -->
-<path d="M 334,486 L 340,470 L 560,470 L 566,486 Z" fill="#0A001C" stroke="#280050" stroke-width="1"/>
+<!-- Layer 1: Rear Diffuser & Lower Bumper -->
+<path d="M 330,502 L 338,486 L 562,486 L 570,502 Z" fill="#0A001C" stroke="#280050" stroke-width="1"/>
+<!-- Vertical Aerodynamic Diffuser Fins -->
+<line x1="410" y1="488" x2="410" y2="502" stroke="#440088" stroke-width="2"/>
+<line x1="436" y1="488" x2="436" y2="502" stroke="#440088" stroke-width="2"/>
+<line x1="464" y1="488" x2="464" y2="502" stroke="#440088" stroke-width="2"/>
+<line x1="490" y1="488" x2="490" y2="502" stroke="#440088" stroke-width="2"/>
+<!-- Diffuser Neon Glow Lip -->
+<line x1="334" y1="501" x2="566" y2="501" stroke="#FF00BB" stroke-width="2" opacity="0.8" filter="url(#f1)">
+  <animate attributeName="stroke" values="#FF00BB;#00FFFF;#FF00BB" dur="4s" repeatCount="indefinite"/>
+</line>
+
+<!-- Layer 2: Mid bumper -->
+<path d="M 336,486 L 340,470 L 560,470 L 564,486 Z" fill="#080018" stroke="#250048" stroke-width="1"/>
 <!-- Layer 3: Body mid -->
 <path d="M 340,470 L 348,452 L 552,452 L 560,470 Z" fill="#0E0025" stroke="#330060" stroke-width="1"/>
 <!-- Layer 4: Body upper / shoulder -->
@@ -701,59 +868,46 @@
 <!-- Trunk lid seam -->
 <line x1="370" y1="436" x2="530" y2="436" stroke="#1A0035" stroke-width="1" opacity="0.6"/>
 
-<!-- License plate -->
-<rect x="418" y="472" width="64" height="15" rx="2" fill="#DDDDEE" opacity="0.88"/>
-<rect x="420" y="474" width="60" height="11" rx="1" fill="#CCCCDD"/>
-<rect x="425" y="476" width="5" height="7" rx="1" fill="#111133" opacity="0.65"/>
-<rect x="434" y="476" width="5" height="7" rx="1" fill="#111133" opacity="0.65"/>
-<rect x="443" y="476" width="5" height="7" rx="1" fill="#111133" opacity="0.65"/>
-<rect x="452" y="476" width="5" height="7" rx="1" fill="#111133" opacity="0.65"/>
-<rect x="461" y="476" width="5" height="7" rx="1" fill="#111133" opacity="0.65"/>
-<rect x="470" y="476" width="5" height="7" rx="1" fill="#111133" opacity="0.65"/>
+<!-- Rear Cyber Grille (Replaces license plate & exhaust) -->
+<rect x="398" y="468" width="104" height="15" rx="2" fill="#050012" stroke="#220044" stroke-width="1"/>
+<line x1="404" y1="472" x2="496" y2="472" stroke="#00FFFF" stroke-width="0.8" stroke-opacity="0.45"/>
+<line x1="404" y1="476" x2="496" y2="476" stroke="#FF0088" stroke-width="0.8" stroke-opacity="0.45"/>
+<line x1="404" y1="480" x2="496" y2="480" stroke="#00FFFF" stroke-width="0.8" stroke-opacity="0.45"/>
 
-<!-- Exhaust -->
-<ellipse cx="378" cy="492" rx="8" ry="4.5" fill="#050010" stroke="#1A0030" stroke-width="1"/>
-<ellipse cx="522" cy="492" rx="8" ry="4.5" fill="#050010" stroke="#1A0030" stroke-width="1"/>
+<!-- ── TAIL LIGHTS & CONTINUOUS CYBER LED BAR ── -->
+<!-- Full-width connecting lightbar -->
+<line x1="344" y1="458" x2="556" y2="458" stroke="#FF0033" stroke-width="5" opacity="0.85" filter="url(#f1)">
+  <animate attributeName="opacity" values="0.75;1;0.75" dur="1.7s" repeatCount="indefinite"/>
+</line>
+<line x1="344" y1="458" x2="556" y2="458" stroke="#FFAA88" stroke-width="1.8" opacity="0.95"/>
 
-<!-- ── TAIL LIGHTS ── -->
-<!-- Left taillight unit -->
+<!-- Left taillight cluster -->
 <rect x="340" y="448" width="28" height="20" rx="3" fill="#FF1400" opacity="0.92">
   <animate attributeName="opacity" values="0.78;1;0.78" dur="1.7s" repeatCount="indefinite"/>
 </rect>
 <rect x="342" y="450" width="24" height="16" rx="2" fill="#FF4422" opacity="0.75"/>
-<!-- Inner bright spot -->
 <rect x="344" y="452" width="12" height="8" rx="1" fill="#FFAA88" opacity="0.6"/>
-<!-- Left glow (close) -->
+<!-- Left glow -->
 <rect x="332" y="442" width="42" height="30" rx="4" fill="#FF0022" opacity="0.35" filter="url(#f2)">
   <animate attributeName="opacity" values="0.25;0.55;0.25" dur="1.7s" repeatCount="indefinite"/>
 </rect>
-<!-- Left ambient glow (far) -->
 <ellipse cx="354" cy="460" rx="55" ry="30" fill="#FF0011" opacity="0.18" filter="url(#f3)">
   <animate attributeName="opacity" values="0.12;0.3;0.12" dur="1.7s" repeatCount="indefinite"/>
 </ellipse>
 
-<!-- Right taillight unit -->
+<!-- Right taillight cluster -->
 <rect x="532" y="448" width="28" height="20" rx="3" fill="#FF1400" opacity="0.92">
   <animate attributeName="opacity" values="0.78;1;0.78" dur="1.7s" repeatCount="indefinite"/>
 </rect>
 <rect x="534" y="450" width="24" height="16" rx="2" fill="#FF4422" opacity="0.75"/>
 <rect x="544" y="452" width="12" height="8" rx="1" fill="#FFAA88" opacity="0.6"/>
+<!-- Right glow -->
 <rect x="526" y="442" width="42" height="30" rx="4" fill="#FF0022" opacity="0.35" filter="url(#f2)">
   <animate attributeName="opacity" values="0.25;0.55;0.25" dur="1.7s" repeatCount="indefinite"/>
 </rect>
 <ellipse cx="546" cy="460" rx="55" ry="30" fill="#FF0011" opacity="0.18" filter="url(#f3)">
   <animate attributeName="opacity" values="0.12;0.3;0.12" dur="1.7s" repeatCount="indefinite"/>
 </ellipse>
-
-<!-- ── WHEELS ── -->
-<!-- Left wheel -->
-<ellipse cx="374" cy="492" rx="34" ry="14" fill="#070015" stroke="#1A0030" stroke-width="2"/>
-<ellipse cx="374" cy="489" rx="25" ry="10" fill="#0A001E" stroke="#2A0048" stroke-width="1.2"/>
-<ellipse cx="374" cy="489" rx="11" ry="5"  fill="#060012" stroke="#380060" stroke-width="1"/>
-<!-- Right wheel -->
-<ellipse cx="526" cy="492" rx="34" ry="14" fill="#070015" stroke="#1A0030" stroke-width="2"/>
-<ellipse cx="526" cy="489" rx="25" ry="10" fill="#0A001E" stroke="#2A0048" stroke-width="1.2"/>
-<ellipse cx="526" cy="489" rx="11" ry="5"  fill="#060012" stroke="#380060" stroke-width="1"/>
 
 <!-- ═══════════ TERMINAL PANEL ═══════════ -->
 <rect x="14" y="12" width="240" height="82" rx="6" fill="#000" fill-opacity="0.78" stroke="#FF00CC" stroke-width="1">
