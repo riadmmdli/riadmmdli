@@ -63,6 +63,51 @@
     <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
 
+  <!-- High-Rise Building Patterns & Facade Styles -->
+  <pattern id="winWarm" width="6" height="8" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1" width="3" height="4" rx="0.5" fill="#FFEAA7" opacity="0.8"/>
+  </pattern>
+  <pattern id="winCyan" width="5" height="7" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1" width="2.5" height="3.5" rx="0.5" fill="#00F0FF" opacity="0.75"/>
+  </pattern>
+  <pattern id="winWhite" width="6" height="8" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1" width="2.5" height="3.5" rx="0.5" fill="#E8F4F8" opacity="0.7"/>
+  </pattern>
+  <pattern id="winPink" width="7" height="9" patternUnits="userSpaceOnUse">
+    <rect x="1.5" y="1.5" width="3" height="4" rx="0.5" fill="#FF70C0" opacity="0.65"/>
+  </pattern>
+  <pattern id="winDense" width="4" height="6" patternUnits="userSpaceOnUse">
+    <rect x="1" y="1" width="1.8" height="2.5" rx="0.3" fill="#00E5FF" opacity="0.7"/>
+  </pattern>
+  <pattern id="glassStripes" width="4" height="10" patternUnits="userSpaceOnUse">
+    <line x1="2" y1="0" x2="2" y2="10" stroke="#00FFFF" stroke-width="0.8" opacity="0.3"/>
+  </pattern>
+
+  <!-- Gradients for building depth & lighting -->
+  <linearGradient id="bldgFarGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1B0438" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#0B001A" stop-opacity="0.95"/>
+  </linearGradient>
+  <linearGradient id="bldgMidGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#140228"/>
+    <stop offset="100%" stop-color="#060012"/>
+  </linearGradient>
+  <linearGradient id="bldgNearGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0E0020"/>
+    <stop offset="100%" stop-color="#030009"/>
+  </linearGradient>
+  <linearGradient id="glassFacade" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#0C001E"/>
+    <stop offset="45%" stop-color="#1E0744"/>
+    <stop offset="70%" stop-color="#2D0B5E"/>
+    <stop offset="100%" stop-color="#080014"/>
+  </linearGradient>
+  <linearGradient id="cityBaseHaze" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0%" stop-color="#FF0088" stop-opacity="0.3"/>
+    <stop offset="50%" stop-color="#7700AA" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+  </linearGradient>
+
   <!-- Terminal reveal clips -->
   <clipPath id="tc1"><rect x="24" y="27" width="0" height="16"><animate attributeName="width" from="0" to="95"  dur="0.5s" begin="0.4s" fill="freeze"/></rect></clipPath>
   <clipPath id="tc2"><rect x="24" y="44" width="0" height="16"><animate attributeName="width" from="0" to="155" dur="0.7s" begin="1.1s" fill="freeze"/></rect></clipPath>
@@ -137,74 +182,319 @@
 <line x1="692" y1="212" x2="692" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
 <line x1="642" y1="218" x2="642" y2="302" stroke="#1133AA" stroke-width="0.7" opacity="0.5"/>
 
-<!-- ═══════════ CITY SILHOUETTE ═══════════ -->
-<g fill="#060018">
-  <!-- Left buildings -->
-  <rect x="60"  y="262" width="42" height="40"/>
-  <rect x="70"  y="250" width="16" height="52"/>
-  <rect x="94"  y="258" width="30" height="44"/>
-  <rect x="100" y="244" width="12" height="58"/>
-  <rect x="132" y="255" width="35" height="47"/>
-  <rect x="140" y="240" width="14" height="62"/>
-  <rect x="175" y="260" width="38" height="42"/>
-  <rect x="182" y="248" width="16" height="54"/>
-  <rect x="220" y="252" width="32" height="50"/>
-  <rect x="226" y="238" width="12" height="64"/>
-  <rect x="260" y="258" width="35" height="44"/>
-  <rect x="268" y="245" width="14" height="57"/>
-  <rect x="302" y="254" width="30" height="48"/>
-  <rect x="308" y="240" width="12" height="62"/>
-  <rect x="340" y="262" width="28" height="40"/>
-  <rect x="345" y="250" width="10" height="52"/>
-  <!-- Center tall buildings -->
-  <rect x="368" y="232" width="25" height="70"/>
-  <rect x="372" y="218" width="14" height="84"/>
-  <rect x="400" y="210" width="30" height="92"/>
-  <rect x="406" y="198" width="16" height="104"/>
-  <rect x="432" y="190" width="22" height="112"/>
-  <rect x="438" y="180" width="14" height="122"/>
-  <rect x="446" y="175" width="18" height="127"/>
-  <rect x="468" y="188" width="20" height="114"/>
-  <rect x="475" y="198" width="28" height="104"/>
-  <rect x="505" y="208" width="22" height="94"/>
-  <rect x="510" y="218" width="30" height="84"/>
-  <rect x="537" y="228" width="24" height="74"/>
-  <!-- Right buildings -->
-  <rect x="560" y="252" width="30" height="50"/>
-  <rect x="566" y="240" width="12" height="62"/>
-  <rect x="598" y="255" width="35" height="47"/>
-  <rect x="606" y="243" width="13" height="59"/>
-  <rect x="640" y="260" width="32" height="42"/>
-  <rect x="646" y="247" width="14" height="55"/>
-  <rect x="680" y="254" width="36" height="48"/>
-  <rect x="688" y="241" width="15" height="61"/>
-  <rect x="722" y="258" width="33" height="44"/>
-  <rect x="728" y="246" width="14" height="56"/>
-  <rect x="762" y="262" width="38" height="40"/>
-  <rect x="769" y="250" width="14" height="52"/>
-  <rect x="808" y="256" width="34" height="46"/>
-  <rect x="814" y="244" width="12" height="58"/>
+<!-- ═══════════ REALISTIC RETROWAVE METROPOLIS ═══════════ -->
+
+<!-- Atmospheric Sky Searchlights (Behind City) -->
+<g opacity="0.09">
+  <polygon points="240,302 180,0 215,0" fill="#00FFFF">
+    <animateTransform attributeName="transform" type="rotate" from="-10 240 302" to="12 240 302" dur="7.5s" repeatCount="indefinite" additive="sum"/>
+  </polygon>
+  <polygon points="660,302 620,0 655,0" fill="#FF00AA">
+    <animateTransform attributeName="transform" type="rotate" from="12 660 302" to="-10 660 302" dur="9s" repeatCount="indefinite" additive="sum"/>
+  </polygon>
+  <polygon points="450,302 430,0 460,0" fill="#00E5FF">
+    <animateTransform attributeName="transform" type="rotate" from="-5 450 302" to="5 450 302" dur="6.2s" repeatCount="indefinite" additive="sum"/>
+  </polygon>
 </g>
 
-<!-- Building windows glow -->
-<g fill="#FF88CC" opacity="0.3">
-  <rect x="103" y="247" width="3" height="3"/><rect x="143" y="243" width="3" height="3"/>
-  <rect x="228" y="241" width="3" height="3"/><rect x="270" y="248" width="3" height="3"/>
-  <rect x="310" y="243" width="3" height="3"/><rect x="347" y="253" width="3" height="3"/>
-  <rect x="374" y="221" width="4" height="3"/><rect x="408" y="202" width="3" height="3"/>
-  <rect x="440" y="183" width="3" height="3"/><rect x="449" y="178" width="3" height="3"/>
-  <rect x="470" y="191" width="3" height="3"/><rect x="512" y="221" width="3" height="3"/>
-  <rect x="567" y="243" width="3" height="3"/><rect x="608" y="246" width="3" height="3"/>
-  <rect x="648" y="250" width="3" height="3"/><rect x="730" y="249" width="3" height="3"/>
-  <rect x="770" y="253" width="3" height="3"/><rect x="816" y="247" width="3" height="3"/>
+<!-- ── LAYER 1: FAR BACKGROUND SKYLINE (Distant Spires & Silhouette) ── -->
+<g fill="url(#bldgFarGrad)" opacity="0.75">
+  <rect x="42"  y="248" width="22" height="54"/>
+  <rect x="74"  y="232" width="26" height="70"/>
+  <line x1="87" y1="205" x2="87" y2="232" stroke="#25084C" stroke-width="1.5"/>
+  <rect x="110" y="238" width="30" height="64"/>
+  <rect x="150" y="224" width="28" height="78"/>
+  <line x1="164" y1="192" x2="164" y2="224" stroke="#25084C" stroke-width="1.5"/>
+  <rect x="194" y="230" width="32" height="72"/>
+  <rect x="238" y="215" width="25" height="87"/>
+  <line x1="250" y1="180" x2="250" y2="215" stroke="#25084C" stroke-width="1.2"/>
+  <rect x="280" y="228" width="24" height="74"/>
+  <rect x="318" y="212" width="26" height="90"/>
+  <rect x="354" y="198" width="22" height="104"/>
+  <line x1="365" y1="165" x2="365" y2="198" stroke="#25084C" stroke-width="1.5"/>
+  <rect x="420" y="185" width="28" height="117"/>
+  <line x1="434" y1="145" x2="434" y2="185" stroke="#25084C" stroke-width="1.5"/>
+  <rect x="480" y="192" width="24" height="110"/>
+  <rect x="522" y="208" width="26" height="94"/>
+  <line x1="535" y1="172" x2="535" y2="208" stroke="#25084C" stroke-width="1.5"/>
+  <rect x="565" y="222" width="22" height="80"/>
+  <rect x="600" y="210" width="28" height="92"/>
+  <line x1="614" y1="175" x2="614" y2="210" stroke="#25084C" stroke-width="1.5"/>
+  <rect x="645" y="225" width="24" height="77"/>
+  <rect x="682" y="218" width="28" height="84"/>
+  <line x1="696" y1="184" x2="696" y2="218" stroke="#25084C" stroke-width="1.5"/>
+  <rect x="725" y="232" width="26" height="70"/>
+  <rect x="765" y="226" width="30" height="76"/>
+  <rect x="810" y="242" width="28" height="60"/>
+  <line x1="824" y1="210" x2="824" y2="242" stroke="#25084C" stroke-width="1.5"/>
+  <rect x="845" y="252" width="20" height="50"/>
 </g>
-<g fill="#88CCFF" opacity="0.25">
-  <rect x="71"  y="253" width="3" height="3"/><rect x="184" y="251" width="3" height="3"/>
-  <rect x="227" y="254" width="3" height="3"/><rect x="269" y="260" width="3" height="3"/>
-  <rect x="407" y="214" width="3" height="3"/><rect x="477" y="202" width="3" height="3"/>
-  <rect x="511" y="230" width="3" height="3"/><rect x="607" y="258" width="3" height="3"/>
-  <rect x="689" y="244" width="3" height="3"/><rect x="769" y="264" width="3" height="3"/>
+
+<!-- Distant Aviation Beacons on Far Spires -->
+<g fill="#FF2255">
+  <circle cx="87"  cy="205" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.9;0.1;0.9" dur="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="164" cy="192" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.1;0.9;0.1" dur="1.3s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="180" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.9;0.1;0.9" dur="1.6s" repeatCount="indefinite"/></circle>
+  <circle cx="365" cy="165" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.1;0.9;0.1" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="535" cy="172" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.9;0.1;0.9" dur="1.7s" repeatCount="indefinite"/></circle>
+  <circle cx="614" cy="175" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.1;0.9;0.1" dur="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="696" cy="184" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.9;0.1;0.9" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="824" cy="210" r="1.5" opacity="0.8"><animate attributeName="opacity" values="0.1;0.9;0.1" dur="1.8s" repeatCount="indefinite"/></circle>
 </g>
+
+<!-- ── LAYER 2: MAIN METROPOLIS SKYSCRAPERS (Detailed Architecture) ── -->
+
+<!-- WEST SECTOR (Left) -->
+
+<!-- Tower W1: Telecom & Radar Facility (x=50) -->
+<rect x="52" y="244" width="32" height="58" fill="url(#bldgMidGrad)" stroke="#1F043D" stroke-width="0.8"/>
+<rect x="58" y="248" width="20" height="48" fill="url(#winCyan)" opacity="0.55"/>
+<line x1="68" y1="220" x2="68" y2="244" stroke="#441166" stroke-width="1.8"/>
+<circle cx="68" cy="218" r="2.2" fill="#FF1144"><animate attributeName="opacity" values="1;0.1;1" dur="1.2s" repeatCount="indefinite"/></circle>
+
+<!-- Tower W2: Slanted Crown Skyscraper (Citigroup Style, x=86) -->
+<path d="M 86,302 L 86,212 L 132,186 L 132,302 Z" fill="url(#glassFacade)" stroke="#00FFFF" stroke-width="0.8" stroke-opacity="0.4"/>
+<!-- Roof Edge Highlight -->
+<line x1="86" y1="212" x2="132" y2="186" stroke="#00FFFF" stroke-width="1.8" stroke-opacity="0.75" filter="url(#f1)"/>
+<!-- Vertical glass ribbon curtain wall -->
+<rect x="92" y="214" width="34" height="82" fill="url(#glassStripes)"/>
+<rect x="94" y="222" width="30" height="74" fill="url(#winCyan)" opacity="0.65"/>
+<!-- Spire -->
+<line x1="130" y1="162" x2="130" y2="186" stroke="#331155" stroke-width="1.5"/>
+<circle cx="130" cy="160" r="2" fill="#FF1144"><animate attributeName="opacity" values="1;0.1;1" dur="1.5s" repeatCount="indefinite"/></circle>
+
+<!-- Tower W3: Stepped Art-Deco High-Rise (x=132) -->
+<rect x="134" y="248" width="44" height="54" fill="url(#bldgMidGrad)"/>
+<rect x="140" y="226" width="32" height="22" fill="url(#bldgMidGrad)"/>
+<rect x="146" y="206" width="20" height="20" fill="url(#bldgMidGrad)" stroke="#FF0088" stroke-width="0.6" stroke-opacity="0.5"/>
+<rect x="138" y="252" width="36" height="44" fill="url(#winWarm)" opacity="0.75"/>
+<rect x="144" y="230" width="24" height="14" fill="url(#winWarm)" opacity="0.75"/>
+<!-- Penthouse glow -->
+<rect x="148" y="209" width="16" height="4" fill="#FFEAA7" opacity="0.9"/>
+<!-- Rooftop Water Tower -->
+<rect x="141" y="220" width="8" height="6" rx="1" fill="#080016" stroke="#331144" stroke-width="0.6"/>
+<line x1="142" y1="226" x2="142" y2="230" stroke="#331144" stroke-width="1"/>
+<line x1="148" y1="226" x2="148" y2="230" stroke="#331144" stroke-width="1"/>
+
+<!-- Tower W4: The Obelisk / Angled Shard (x=174) -->
+<polygon points="174,302 174,210 198,155 224,210 224,302" fill="url(#glassFacade)" stroke="#FF00AA" stroke-width="0.6" stroke-opacity="0.3"/>
+<!-- Illuminated glass seam -->
+<line x1="198" y1="155" x2="198" y2="302" stroke="#00FFFF" stroke-width="1" stroke-opacity="0.55"/>
+<!-- Windows inside polygon -->
+<rect x="180" y="218" width="38" height="78" fill="url(#winWhite)" opacity="0.6"/>
+<line x1="198" y1="155" x2="198" y2="135" stroke="#441166" stroke-width="1.8"/>
+<circle cx="198" cy="133" r="2.2" fill="#FF1144"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.3s" repeatCount="indefinite"/></circle>
+
+<!-- Tower W5: Cross-Braced High-Rise (Hancock Style, x=222) -->
+<rect x="222" y="196" width="44" height="106" fill="url(#bldgMidGrad)" stroke="#1E033A" stroke-width="1"/>
+<!-- Cross Bracing Structural Diagonals -->
+<g stroke="#00FFFF" stroke-width="0.8" stroke-opacity="0.35">
+  <line x1="222" y1="200" x2="266" y2="232"/>
+  <line x1="266" y1="200" x2="222" y2="232"/>
+  <line x1="222" y1="232" x2="266" y2="264"/>
+  <line x1="266" y1="232" x2="222" y2="264"/>
+  <line x1="222" y1="264" x2="266" y2="296"/>
+  <line x1="266" y1="264" x2="222" y2="296"/>
+</g>
+<rect x="226" y="202" width="36" height="94" fill="url(#winCyan)" opacity="0.6"/>
+<!-- Twin Rooftop Masts -->
+<line x1="230" y1="172" x2="230" y2="196" stroke="#441166" stroke-width="1.5"/>
+<line x1="258" y1="172" x2="258" y2="196" stroke="#441166" stroke-width="1.5"/>
+<circle cx="230" cy="170" r="1.8" fill="#FF2255"><animate attributeName="opacity" values="1;0.1;1" dur="1.4s" repeatCount="indefinite"/></circle>
+<circle cx="258" cy="170" r="1.8" fill="#FF2255"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.4s" repeatCount="indefinite"/></circle>
+
+<!-- Tower W6: Cylindrical Stepped Tower (x=268) -->
+<path d="M 268,302 L 268,230 Q 288,220 308,230 L 308,302 Z" fill="url(#bldgMidGrad)"/>
+<path d="M 274,230 L 274,188 Q 288,180 302,188 L 302,230 Z" fill="url(#glassFacade)" stroke="#FF00BB" stroke-width="0.8" stroke-opacity="0.5"/>
+<line x1="274" y1="188" x2="302" y2="188" stroke="#FF00BB" stroke-width="1.5" stroke-opacity="0.8" filter="url(#f1)"/>
+<rect x="272" y="234" width="32" height="62" fill="url(#winPink)" opacity="0.6"/>
+<rect x="278" y="194" width="20" height="32" fill="url(#winWarm)" opacity="0.75"/>
+
+<!-- Tower W7: Cyber Commercial Complex with Billboard (x=304) -->
+<rect x="306" y="225" width="36" height="77" fill="url(#bldgMidGrad)" stroke="#1F043D" stroke-width="0.8"/>
+<rect x="310" y="232" width="28" height="64" fill="url(#winCyan)" opacity="0.65"/>
+<!-- Rooftop Holographic/Neon Billboard -->
+<rect x="310" y="208" width="28" height="15" rx="2" fill="#000" stroke="#00FFFF" stroke-width="1.2" filter="url(#f1)">
+  <animate attributeName="stroke" values="#00FFFF;#FF00AA;#00FFFF" dur="4s" repeatCount="indefinite"/>
+</rect>
+<rect x="312" y="210" width="24" height="11" fill="#060018"/>
+<text x="315" y="219" fill="#00FFFF" font-family="'Courier New', monospace" font-size="7" font-weight="bold">AI 84</text>
+<line x1="316" y1="223" x2="316" y2="225" stroke="#331155" stroke-width="1"/>
+<line x1="332" y1="223" x2="332" y2="225" stroke="#331155" stroke-width="1"/>
+
+<!-- CENTRAL LANDMARK SECTOR (Framed Against The Sun, x=340-560) -->
+
+<!-- Tower C1: Setback Spire (x=340) -->
+<rect x="342" y="246" width="30" height="56" fill="url(#bldgNearGrad)"/>
+<rect x="346" y="216" width="22" height="30" fill="url(#bldgNearGrad)"/>
+<rect x="350" y="188" width="14" height="28" fill="url(#bldgNearGrad)"/>
+<rect x="346" y="250" width="22" height="48" fill="url(#winWarm)" opacity="0.7"/>
+<rect x="349" y="220" width="16" height="22" fill="url(#winCyan)" opacity="0.65"/>
+<line x1="357" y1="152" x2="357" y2="188" stroke="#441166" stroke-width="1.5"/>
+<circle cx="357" cy="150" r="2" fill="#FF1144"><animate attributeName="opacity" values="1;0.1;1" dur="1.2s" repeatCount="indefinite"/></circle>
+
+<!-- Twin Towers with Glass Skybridge (x=372 - 438) -->
+<!-- Left Twin -->
+<rect x="374" y="166" width="26" height="136" fill="url(#glassFacade)" stroke="#00FFFF" stroke-width="0.8" stroke-opacity="0.35"/>
+<!-- Left Twin Crown -->
+<polygon points="374,166 387,144 400,166" fill="#0A001C" stroke="#00FFFF" stroke-width="1" stroke-opacity="0.7"/>
+<line x1="387" y1="118" x2="387" y2="144" stroke="#441166" stroke-width="1.8"/>
+<circle cx="387" cy="116" r="2.2" fill="#FF1144"><animate attributeName="opacity" values="1;0.1;1" dur="1.4s" repeatCount="indefinite"/></circle>
+<rect x="377" y="172" width="20" height="124" fill="url(#winCyan)" opacity="0.7"/>
+
+<!-- Right Twin -->
+<rect x="410" y="166" width="26" height="136" fill="url(#glassFacade)" stroke="#00FFFF" stroke-width="0.8" stroke-opacity="0.35"/>
+<!-- Right Twin Crown -->
+<polygon points="410,166 423,144 436,166" fill="#0A001C" stroke="#00FFFF" stroke-width="1" stroke-opacity="0.7"/>
+<line x1="423" y1="118" x2="423" y2="144" stroke="#441166" stroke-width="1.8"/>
+<circle cx="423" cy="116" r="2.2" fill="#FF1144"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.4s" repeatCount="indefinite"/></circle>
+<rect x="413" y="172" width="20" height="124" fill="url(#winCyan)" opacity="0.7"/>
+
+<!-- Connecting Glass Skybridge -->
+<rect x="400" y="214" width="10" height="8" rx="1" fill="#050012" stroke="#00FFFF" stroke-width="1" filter="url(#f1)"/>
+<rect x="401" y="216" width="8" height="4" fill="#FFEAA7" opacity="0.95"/>
+
+<!-- Tower C3: The Central Grand Spire / Apex of the Skyline (x=436) -->
+<path d="M 436,302 L 436,170 L 442,142 L 458,142 L 464,170 L 464,302 Z" fill="url(#glassFacade)" stroke="#FF00AA" stroke-width="0.8" stroke-opacity="0.4"/>
+<!-- Vertical illuminated power conduit / elevator core -->
+<line x1="450" y1="142" x2="450" y2="302" stroke="#00FFFF" stroke-width="1.8" stroke-opacity="0.7" filter="url(#f1)">
+  <animate attributeName="stroke-opacity" values="0.5;0.95;0.5" dur="3s" repeatCount="indefinite"/>
+</line>
+<rect x="440" y="174" width="8" height="122" fill="url(#winWarm)" opacity="0.75"/>
+<rect x="452" y="174" width="8" height="122" fill="url(#winCyan)" opacity="0.75"/>
+<!-- Spire Mast -->
+<line x1="450" y1="96" x2="450" y2="142" stroke="#FF00AA" stroke-width="2" stroke-opacity="0.8"/>
+<circle cx="450" cy="120" r="5" fill="none" stroke="#FF00AA" stroke-width="1" stroke-opacity="0.6"/>
+<circle cx="450" cy="94" r="2.8" fill="#FF0044" filter="url(#f1)">
+  <animate attributeName="opacity" values="1;1;0.1;0.1;1" keyTimes="0;0.45;0.5;0.95;1" dur="1.1s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Tower C4: Curved Blade Skyscraper (x=466) -->
+<path d="M 466,302 L 466,168 Q 484,152 502,176 L 502,302 Z" fill="url(#bldgMidGrad)" stroke="#00FFFF" stroke-width="0.7" stroke-opacity="0.4"/>
+<line x1="466" y1="168" x2="502" y2="176" stroke="#00FFFF" stroke-width="1.8" stroke-opacity="0.8" filter="url(#f1)"/>
+<rect x="470" y="180" width="28" height="116" fill="url(#winWhite)" opacity="0.65"/>
+<!-- Helipad Beacon on roof -->
+<circle cx="488" cy="168" r="1.8" fill="#00FF88"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
+
+<!-- Tower C5: Slanted Apex Tower (x=504) -->
+<path d="M 504,302 L 504,182 L 542,204 L 542,302 Z" fill="url(#glassFacade)" stroke="#FF00BB" stroke-width="0.8" stroke-opacity="0.4"/>
+<line x1="504" y1="182" x2="542" y2="204" stroke="#FF00BB" stroke-width="1.8" stroke-opacity="0.8" filter="url(#f1)"/>
+<rect x="508" y="206" width="30" height="90" fill="url(#winWarm)" opacity="0.75"/>
+<line x1="504" y1="158" x2="504" y2="182" stroke="#441166" stroke-width="1.5"/>
+<circle cx="504" cy="156" r="2" fill="#FF1144"><animate attributeName="opacity" values="1;0.1;1" dur="1.3s" repeatCount="indefinite"/></circle>
+
+<!-- Tower C6: Stepped Telecommunications Complex (x=542) -->
+<rect x="544" y="238" width="32" height="64" fill="url(#bldgNearGrad)"/>
+<rect x="548" y="212" width="24" height="26" fill="url(#bldgNearGrad)"/>
+<rect x="548" y="244" width="24" height="52" fill="url(#winCyan)" opacity="0.65"/>
+<rect x="552" y="218" width="16" height="18" fill="url(#winWarm)" opacity="0.7"/>
+<!-- Rooftop Satellite Dish -->
+<path d="M 554,208 Q 560,203 566,208" fill="none" stroke="#00FFFF" stroke-width="1.5"/>
+<line x1="560" y1="205" x2="560" y2="212" stroke="#331155" stroke-width="1.2"/>
+
+<!-- EAST SECTOR (Right) -->
+
+<!-- Tower E1: Cross-Braced Tower (x=576) -->
+<rect x="578" y="192" width="40" height="110" fill="url(#bldgMidGrad)" stroke="#1F043D" stroke-width="1"/>
+<g stroke="#FF00AA" stroke-width="0.8" stroke-opacity="0.3">
+  <line x1="578" y1="196" x2="618" y2="228"/>
+  <line x1="618" y1="196" x2="578" y2="228"/>
+  <line x1="578" y1="228" x2="618" y2="260"/>
+  <line x1="618" y1="228" x2="578" y2="260"/>
+</g>
+<rect x="582" y="200" width="32" height="96" fill="url(#winCyan)" opacity="0.65"/>
+<line x1="598" y1="164" x2="598" y2="192" stroke="#441166" stroke-width="1.6"/>
+<circle cx="598" cy="162" r="2.2" fill="#FF1144"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.5s" repeatCount="indefinite"/></circle>
+
+<!-- Tower E2: Cantilevered Modernist Tower with Corporate Hologram (x=620) -->
+<rect x="622" y="236" width="40" height="66" fill="url(#bldgMidGrad)"/>
+<rect x="616" y="172" width="48" height="64" fill="url(#glassFacade)" stroke="#00FFFF" stroke-width="0.8" stroke-opacity="0.4"/>
+<!-- Rooftop glowing rim -->
+<line x1="616" y1="172" x2="664" y2="172" stroke="#00FFFF" stroke-width="1.8" stroke-opacity="0.8" filter="url(#f1)"/>
+<!-- Glowing Hexagon Logo on upper facade -->
+<polygon points="640,182 645,185 645,191 640,194 635,191 635,185" fill="none" stroke="#FF00AA" stroke-width="1.2" filter="url(#f1)"/>
+<rect x="620" y="198" width="40" height="34" fill="url(#winWarm)" opacity="0.75"/>
+<rect x="626" y="242" width="32" height="54" fill="url(#winWhite)" opacity="0.6"/>
+
+<!-- Tower E3: Setback Skyline Tower (x=666) -->
+<rect x="668" y="242" width="34" height="60" fill="url(#bldgMidGrad)"/>
+<rect x="672" y="214" width="26" height="28" fill="url(#bldgMidGrad)"/>
+<rect x="676" y="190" width="18" height="24" fill="url(#bldgMidGrad)" stroke="#00FFFF" stroke-width="0.6" stroke-opacity="0.4"/>
+<rect x="672" y="248" width="26" height="50" fill="url(#winCyan)" opacity="0.65"/>
+<rect x="676" y="220" width="18" height="18" fill="url(#winWarm)" opacity="0.7"/>
+<line x1="685" y1="162" x2="685" y2="190" stroke="#441166" stroke-width="1.5"/>
+<circle cx="685" cy="160" r="2" fill="#FF1144"><animate attributeName="opacity" values="1;0.1;1" dur="1.3s" repeatCount="indefinite"/></circle>
+
+<!-- Tower E4: Angular Wedge Tower (x=704) -->
+<path d="M 704,302 L 704,180 L 744,212 L 744,302 Z" fill="url(#glassFacade)" stroke="#00FFFF" stroke-width="0.8" stroke-opacity="0.4"/>
+<line x1="704" y1="180" x2="744" y2="212" stroke="#00FFFF" stroke-width="1.8" stroke-opacity="0.75" filter="url(#f1)"/>
+<rect x="708" y="216" width="32" height="80" fill="url(#winCyan)" opacity="0.65"/>
+<line x1="704" y1="154" x2="704" y2="180" stroke="#331155" stroke-width="1.5"/>
+<circle cx="704" cy="152" r="2" fill="#FF1144"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.4s" repeatCount="indefinite"/></circle>
+
+<!-- Tower E5: High-Tech Industrial Tower with Crane (x=746) -->
+<rect x="748" y="222" width="34" height="80" fill="url(#bldgMidGrad)" stroke="#1F043D" stroke-width="0.8"/>
+<rect x="752" y="228" width="26" height="68" fill="url(#winWarm)" opacity="0.7"/>
+<!-- Rooftop Crane -->
+<line x1="760" y1="210" x2="760" y2="222" stroke="#FFCC00" stroke-width="1.2"/>
+<line x1="752" y1="210" x2="774" y2="210" stroke="#FFCC00" stroke-width="1.2"/>
+<circle cx="774" cy="210" r="1.5" fill="#FFCC00"><animate attributeName="opacity" values="1;0.2;1" dur="0.9s" repeatCount="indefinite"/></circle>
+
+<!-- Tower E6: Spire Needle Tower (x=784) -->
+<polygon points="786,302 786,218 804,176 822,218 822,302" fill="url(#bldgMidGrad)" stroke="#FF00AA" stroke-width="0.6" stroke-opacity="0.3"/>
+<rect x="792" y="224" width="24" height="72" fill="url(#winPink)" opacity="0.6"/>
+<line x1="804" y1="146" x2="804" y2="176" stroke="#441166" stroke-width="1.8"/>
+<circle cx="804" cy="144" r="2.2" fill="#FF1144"><animate attributeName="opacity" values="1;0.1;1" dur="1.2s" repeatCount="indefinite"/></circle>
+
+<!-- Tower E7: Waterfront High-Rise (x=824) -->
+<rect x="826" y="240" width="30" height="62" fill="url(#bldgMidGrad)" stroke="#1F043D" stroke-width="0.8"/>
+<rect x="830" y="246" width="22" height="50" fill="url(#winCyan)" opacity="0.65"/>
+<line x1="841" y1="220" x2="841" y2="240" stroke="#331155" stroke-width="1.5"/>
+<circle cx="841" cy="218" r="1.8" fill="#FF1144"><animate attributeName="opacity" values="0.1;1;0.1" dur="1.6s" repeatCount="indefinite"/></circle>
+
+<!-- ── LAYER 3: FOREGROUND ROOFTOP DETAILS & CYBERPUNK AMBIENCE ── -->
+<!-- Rooftop HVAC cooling units, fans, water tanks, and antennas in foreground -->
+<g fill="#070014" stroke="#220044" stroke-width="0.6">
+  <!-- AC Unit cluster 1 -->
+  <rect x="100" y="278" width="10" height="6" rx="0.5"/>
+  <line x1="102" y1="280" x2="108" y2="280" stroke="#00FFFF" stroke-width="0.5" stroke-opacity="0.4"/>
+  <line x1="102" y1="282" x2="108" y2="282" stroke="#00FFFF" stroke-width="0.5" stroke-opacity="0.4"/>
+  <!-- AC Unit cluster 2 -->
+  <rect x="352" y="268" width="12" height="7" rx="0.5"/>
+  <!-- Water Tank on stilts -->
+  <ellipse cx="634" cy="265" rx="5" ry="4" fill="#0A001C"/>
+  <line x1="630" y1="269" x2="628" y2="276"/>
+  <line x1="638" y1="269" x2="640" y2="276"/>
+  <!-- Satellite dish -->
+  <path d="M 720,268 Q 724,264 728,268" fill="none" stroke="#FF00AA" stroke-width="1.2"/>
+  <line x1="724" y1="266" x2="724" y2="272"/>
+</g>
+
+<!-- Cyberpunk Vertical Neon Signboard (Japanese/Cyber aesthetic) -->
+<g filter="url(#f1)">
+  <rect x="608" y="240" width="7" height="34" rx="1" fill="#000" stroke="#FF0088" stroke-width="0.8">
+    <animate attributeName="stroke-opacity" values="0.7;1;0.4;1" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+  <circle cx="611.5" cy="246" r="1.5" fill="#FF00AA"/>
+  <circle cx="611.5" cy="254" r="1.5" fill="#00FFFF"/>
+  <circle cx="611.5" cy="262" r="1.5" fill="#FF00AA"/>
+  <circle cx="611.5" cy="270" r="1.5" fill="#00FFFF"/>
+</g>
+
+<!-- Subtle random office window flicker (simulating human presence & alive city) -->
+<rect x="228" y="214" width="4" height="4" fill="#FFEAA7">
+  <animate attributeName="opacity" values="0.9;0.9;0.1;0.9;0.8;0.2;0.9" dur="5.2s" repeatCount="indefinite"/>
+</rect>
+<rect x="382" y="196" width="3" height="4" fill="#00FFFF">
+  <animate attributeName="opacity" values="0.8;0.2;0.8;0.8;0.1;0.8" dur="4.1s" repeatCount="indefinite"/>
+</rect>
+<rect x="632" y="210" width="4" height="4" fill="#FFEAA7">
+  <animate attributeName="opacity" values="0.9;0.9;0.9;0.2;0.9" dur="6s" repeatCount="indefinite"/>
+</rect>
+
+<!-- ── LAYER 4: CITY STREET-LEVEL AMBIENT HAZE (Vibrant City Glow) ── -->
+<rect x="40" y="270" width="820" height="32" fill="url(#cityBaseHaze)"/>
+
 
 <!-- Palm trees (silhouette left) -->
 <g fill="none" stroke="#040010" stroke-linecap="round">
