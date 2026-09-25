@@ -491,132 +491,117 @@
 <rect x="0" y="300.5" width="900" height="3" fill="#FF00CC" opacity="0.9" filter="url(#f1)"/>
 <line x1="0" y1="302" x2="900" y2="302" stroke="#FFFFFF" stroke-width="1.6" opacity="0.95"/>
 
-<!-- ═══════════ GROUND & HIGHWAY ROADWAY ═══════════ -->
+<!-- ═══════════ GROUND & WIDE RETROWAVE PERSPECTIVE GRID ═══════════ -->
 <rect x="0" y="302" width="900" height="218" fill="url(#groundG)"/>
 
 <g clip-path="url(#groundClip)">
 
-  <!-- Dedicated Highway Road Bed (Dark reflective asphalt with neon sheen) -->
-  <polygon points="450,302 200,520 700,520" fill="url(#roadSurface)"/>
-  <polygon points="450,302 200,520 700,520" fill="url(#roadLaneSheen)"/>
-
-  <!-- Outer-terrain perspective grid lines (outside highway) -->
-  <g stroke="#9900AA" opacity="0.45" stroke-linecap="round">
-    <line x1="450" y1="302" x2="0" y2="306" stroke-width="0.8"/>
-    <line x1="450" y1="302" x2="0" y2="313" stroke-width="0.9"/>
-    <line x1="450" y1="302" x2="0" y2="323" stroke-width="1.0"/>
-    <line x1="450" y1="302" x2="0" y2="338" stroke-width="1.1"/>
-    <line x1="450" y1="302" x2="0" y2="360" stroke-width="1.3"/>
-    <line x1="450" y1="302" x2="0" y2="392" stroke-width="1.5"/>
-    <line x1="450" y1="302" x2="0" y2="440" stroke-width="1.7"/>
-    <line x1="450" y1="302" x2="0" y2="510" stroke-width="2.0"/>
-    <line x1="450" y1="302" x2="40"  y2="520" stroke-width="2.0"/>
-    <line x1="450" y1="302" x2="95"  y2="520" stroke-width="1.8"/>
-    <line x1="450" y1="302" x2="150" y2="520" stroke-width="1.6"/>
-
-    <line x1="450" y1="302" x2="750" y2="520" stroke-width="1.6"/>
-    <line x1="450" y1="302" x2="805" y2="520" stroke-width="1.8"/>
-    <line x1="450" y1="302" x2="860" y2="520" stroke-width="2.0"/>
-    <line x1="450" y1="302" x2="900" y2="510" stroke-width="2.0"/>
-    <line x1="450" y1="302" x2="900" y2="440" stroke-width="1.7"/>
-    <line x1="450" y1="302" x2="900" y2="392" stroke-width="1.5"/>
-    <line x1="450" y1="302" x2="900" y2="360" stroke-width="1.3"/>
-    <line x1="450" y1="302" x2="900" y2="338" stroke-width="1.1"/>
-    <line x1="450" y1="302" x2="900" y2="323" stroke-width="1.0"/>
-    <line x1="450" y1="302" x2="900" y2="313" stroke-width="0.9"/>
-    <line x1="450" y1="302" x2="900" y2="306" stroke-width="0.8"/>
-  </g>
-
-  <!-- Outer horizontal terrain lines (outside highway, meeting boundary lines) -->
-  <g stroke="#9900AA" opacity="0.35">
-    <line x1="0" y1="320" x2="429.4" y2="320" stroke-width="0.9"/>
-    <line x1="470.6" y1="320" x2="900" y2="320" stroke-width="0.9"/>
-    <line x1="0" y1="335" x2="412.2" y2="335" stroke-width="1.0"/>
-    <line x1="487.8" y1="335" x2="900" y2="335" stroke-width="1.0"/>
-    <line x1="0" y1="357" x2="386.9" y2="357" stroke-width="1.2"/>
-    <line x1="513.1" y1="357" x2="900" y2="357" stroke-width="1.2"/>
-    <line x1="0" y1="388" x2="351.4" y2="388" stroke-width="1.4"/>
-    <line x1="548.6" y1="388" x2="900" y2="388" stroke-width="1.4"/>
-    <line x1="0" y1="432" x2="300.9" y2="432" stroke-width="1.8"/>
-    <line x1="599.1" y1="432" x2="900" y2="432" stroke-width="1.8"/>
-    <line x1="0" y1="492" x2="232.1" y2="492" stroke-width="2.2"/>
-    <line x1="667.9" y1="492" x2="900" y2="492" stroke-width="2.2"/>
-  </g>
-
-  <!-- ── 1. PROMINENT HIGHWAY BOUNDARY LINES (YOLUN BAŞINA VE SONUNA GELEN BELİRLEME ÇİZGİLERİ) ── -->
-  <!-- Left Boundary Line (Underglow + Neon Core + White Laser Ridge + Shoulder Accent) -->
-  <line x1="450" y1="302" x2="200" y2="520" stroke="#00F0FF" stroke-width="8" opacity="0.55" filter="url(#f2)"/>
-  <line x1="450" y1="302" x2="200" y2="520" stroke="#00FFFF" stroke-width="3.2" opacity="0.95" filter="url(#f1)"/>
-  <line x1="450" y1="302" x2="200" y2="520" stroke="#FFFFFF" stroke-width="1.4" opacity="1"/>
-  <line x1="450" y1="302" x2="190" y2="520" stroke="#FF00AA" stroke-width="1.8" opacity="0.8" filter="url(#f1)"/>
-  <line x1="450" y1="302" x2="195" y2="520" stroke="#00FFFF" stroke-width="2.6" stroke-dasharray="5,7" opacity="0.75"/>
-
-  <!-- Right Boundary Line (Underglow + Neon Core + White Laser Ridge + Shoulder Accent) -->
-  <line x1="450" y1="302" x2="700" y2="520" stroke="#00F0FF" stroke-width="8" opacity="0.55" filter="url(#f2)"/>
-  <line x1="450" y1="302" x2="700" y2="520" stroke="#00FFFF" stroke-width="3.2" opacity="0.95" filter="url(#f1)"/>
-  <line x1="450" y1="302" x2="700" y2="520" stroke="#FFFFFF" stroke-width="1.4" opacity="1"/>
-  <line x1="450" y1="302" x2="710" y2="520" stroke="#FF00AA" stroke-width="1.8" opacity="0.8" filter="url(#f1)"/>
-  <line x1="450" y1="302" x2="705" y2="520" stroke="#00FFFF" stroke-width="2.6" stroke-dasharray="5,7" opacity="0.75"/>
-
-  <!-- Inner-highway lane divider lines -->
-  <line x1="450" y1="302" x2="330" y2="520" stroke="#FF1493" stroke-width="1.4" opacity="0.75"/>
-  <line x1="450" y1="302" x2="570" y2="520" stroke="#FF1493" stroke-width="1.4" opacity="0.75"/>
-  <!-- Center highway dashed lane line -->
-  <line x1="450" y1="302" x2="450" y2="520" stroke="#FF00AA" stroke-width="2.2" stroke-dasharray="10,8" opacity="0.85"/>
-  <line x1="450" y1="302" x2="450" y2="520" stroke="#FFFFFF" stroke-width="1.0" stroke-dasharray="10,8" opacity="0.9"/>
-
-  <!-- ── 2. FULL SET OF ROAD HORIZONTAL TILES (STARTS AT LEFT BOUNDARY, ENDS AT RIGHT BOUNDARY) ── -->
+  <!-- 1. Full-width converging perspective lines fanning across the entire wide floor -->
   <g stroke="#FF00CC" stroke-linecap="round">
-    <line x1="446.6" y1="305" x2="453.4" y2="305" stroke-width="0.8" opacity="0.75"/>
-    <line x1="442.0" y1="309" x2="458.0" y2="309" stroke-width="0.9" opacity="0.75"/>
-    <line x1="436.2" y1="314" x2="463.8" y2="314" stroke-width="1.0" opacity="0.78"/>
-    <line x1="429.4" y1="320" x2="470.6" y2="320" stroke-width="1.1" opacity="0.78"/>
-    <line x1="421.3" y1="327" x2="478.7" y2="327" stroke-width="1.2" opacity="0.80"/>
-    <line x1="412.2" y1="335" x2="487.8" y2="335" stroke-width="1.3" opacity="0.80"/>
-    <line x1="400.7" y1="345" x2="499.3" y2="345" stroke-width="1.5" opacity="0.82"/>
-    <line x1="386.9" y1="357" x2="513.1" y2="357" stroke-width="1.7" opacity="0.84"/>
-    <line x1="370.9" y1="371" x2="529.1" y2="371" stroke-width="1.9" opacity="0.85"/>
-    <line x1="351.4" y1="388" x2="548.6" y2="388" stroke-width="2.2" opacity="0.86"/>
-    <line x1="328.4" y1="408" x2="571.6" y2="408" stroke-width="2.5" opacity="0.88"/>
-    <line x1="300.9" y1="432" x2="599.1" y2="432" stroke-width="2.8" opacity="0.90"/>
-    <line x1="268.8" y1="460" x2="631.2" y2="460" stroke-width="3.2" opacity="0.92"/>
-    <line x1="232.1" y1="492" x2="667.9" y2="492" stroke-width="3.5" opacity="0.94"/>
-    <line x1="202.3" y1="518" x2="697.7" y2="518" stroke-width="3.8" opacity="0.95"/>
+    <!-- Lines reaching left wall (x=0) -->
+    <line x1="450" y1="302" x2="0" y2="306" stroke-width="0.8" opacity="0.65"/>
+    <line x1="450" y1="302" x2="0" y2="313" stroke-width="0.9" opacity="0.68"/>
+    <line x1="450" y1="302" x2="0" y2="323" stroke-width="1.0" opacity="0.70"/>
+    <line x1="450" y1="302" x2="0" y2="338" stroke-width="1.1" opacity="0.72"/>
+    <line x1="450" y1="302" x2="0" y2="360" stroke-width="1.3" opacity="0.75"/>
+    <line x1="450" y1="302" x2="0" y2="392" stroke-width="1.5" opacity="0.78"/>
+    <line x1="450" y1="302" x2="0" y2="440" stroke-width="1.7" opacity="0.80"/>
+    <line x1="450" y1="302" x2="0" y2="510" stroke-width="2.0" opacity="0.82"/>
+
+    <!-- Lines reaching bottom border (y=520) -->
+    <line x1="450" y1="302" x2="30"  y2="520" stroke-width="1.8" opacity="0.78"/>
+    <line x1="450" y1="302" x2="85"  y2="520" stroke-width="1.7" opacity="0.78"/>
+    <line x1="450" y1="302" x2="145" y2="520" stroke-width="1.6" opacity="0.75"/>
+    <line x1="450" y1="302" x2="205" y2="520" stroke-width="1.5" opacity="0.75"/>
+    <line x1="450" y1="302" x2="265" y2="520" stroke-width="1.4" opacity="0.72"/>
+    <line x1="450" y1="302" x2="325" y2="520" stroke-width="1.3" opacity="0.72"/>
+    <line x1="450" y1="302" x2="385" y2="520" stroke-width="1.2" opacity="0.70"/>
+    <line x1="450" y1="302" x2="420" y2="520" stroke-width="1.1" opacity="0.70"/>
+    <line x1="450" y1="302" x2="450" y2="520" stroke-width="1.1" opacity="0.70"/>
+    <line x1="450" y1="302" x2="480" y2="520" stroke-width="1.1" opacity="0.70"/>
+    <line x1="450" y1="302" x2="515" y2="520" stroke-width="1.2" opacity="0.70"/>
+    <line x1="450" y1="302" x2="575" y2="520" stroke-width="1.3" opacity="0.72"/>
+    <line x1="450" y1="302" x2="635" y2="520" stroke-width="1.4" opacity="0.72"/>
+    <line x1="450" y1="302" x2="695" y2="520" stroke-width="1.5" opacity="0.75"/>
+    <line x1="450" y1="302" x2="755" y2="520" stroke-width="1.6" opacity="0.75"/>
+    <line x1="450" y1="302" x2="815" y2="520" stroke-width="1.7" opacity="0.78"/>
+    <line x1="450" y1="302" x2="870" y2="520" stroke-width="1.8" opacity="0.78"/>
+
+    <!-- Lines reaching right wall (x=900) -->
+    <line x1="450" y1="302" x2="900" y2="306" stroke-width="0.8" opacity="0.65"/>
+    <line x1="450" y1="302" x2="900" y2="313" stroke-width="0.9" opacity="0.68"/>
+    <line x1="450" y1="302" x2="900" y2="323" stroke-width="1.0" opacity="0.70"/>
+    <line x1="450" y1="302" x2="900" y2="338" stroke-width="1.1" opacity="0.72"/>
+    <line x1="450" y1="302" x2="900" y2="360" stroke-width="1.3" opacity="0.75"/>
+    <line x1="450" y1="302" x2="900" y2="392" stroke-width="1.5" opacity="0.78"/>
+    <line x1="450" y1="302" x2="900" y2="440" stroke-width="1.7" opacity="0.80"/>
+    <line x1="450" y1="302" x2="900" y2="510" stroke-width="2.0" opacity="0.82"/>
   </g>
 
-  <!-- ── 3. DYNAMIC FORWARD-TRAVELING NEON LASER ROAD WAVES (BOUNDED BY ROAD BOUNDARY LINES) ── -->
+  <!-- 2. Full set of static horizontal perspective lines forming wide continuous synthwave tiles -->
+  <g stroke="#FF00CC">
+    <line x1="0" y1="303.5" x2="900" y2="303.5" stroke-width="0.7" opacity="0.70"/>
+    <line x1="0" y1="305.5" x2="900" y2="305.5" stroke-width="0.8" opacity="0.70"/>
+    <line x1="0" y1="308.0" x2="900" y2="308.0" stroke-width="0.9" opacity="0.70"/>
+    <line x1="0" y1="311.5" x2="900" y2="311.5" stroke-width="1.0" opacity="0.72"/>
+    <line x1="0" y1="316.0" x2="900" y2="316.0" stroke-width="1.1" opacity="0.72"/>
+    <line x1="0" y1="321.5" x2="900" y2="321.5" stroke-width="1.2" opacity="0.74"/>
+    <line x1="0" y1="328.0" x2="900" y2="328.0" stroke-width="1.3" opacity="0.74"/>
+    <line x1="0" y1="336.0" x2="900" y2="336.0" stroke-width="1.4" opacity="0.76"/>
+    <line x1="0" y1="345.5" x2="900" y2="345.5" stroke-width="1.6" opacity="0.76"/>
+    <line x1="0" y1="357.0" x2="900" y2="357.0" stroke-width="1.8" opacity="0.78"/>
+    <line x1="0" y1="371.0" x2="900" y2="371.0" stroke-width="2.0" opacity="0.80"/>
+    <line x1="0" y1="388.0" x2="900" y2="388.0" stroke-width="2.2" opacity="0.82"/>
+    <line x1="0" y1="409.0" x2="900" y2="409.0" stroke-width="2.5" opacity="0.84"/>
+    <line x1="0" y1="435.0" x2="900" y2="435.0" stroke-width="2.8" opacity="0.86"/>
+    <line x1="0" y1="468.0" x2="900" y2="468.0" stroke-width="3.2" opacity="0.88"/>
+    <line x1="0" y1="510.0" x2="900" y2="510.0" stroke-width="3.6" opacity="0.90"/>
+  </g>
+
+  <!-- 3. Dynamic Forward-Traveling Neon Laser Waves across the wide floor -->
   <line stroke="#FF33DD" stroke-opacity="0">
-    <animate attributeName="x1" from="449" to="200" dur="1.8s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="x2" from="451" to="700" dur="1.8s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="stroke-width" values="1;1.8;3.5;6" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0;0.95;0.85;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0s" repeatCount="indefinite"/>
+    <animate attributeName="x1" from="449" to="0"   dur="1.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x2" from="451" to="900" dur="1.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="0s"    repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="stroke-width" values="1;2;4.5;7" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.9;0.8;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0s" repeatCount="indefinite"/>
   </line>
   <line stroke="#FF33DD" stroke-opacity="0">
-    <animate attributeName="x1" from="449" to="200" dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x1" from="449" to="0"   dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
     <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="x2" from="451" to="700" dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x2" from="451" to="900" dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
     <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="0.45s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="stroke-width" values="1;1.8;3.5;6" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0;0.95;0.85;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="1;2;4.5;7" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.9;0.8;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
   </line>
   <line stroke="#FF33DD" stroke-opacity="0">
-    <animate attributeName="x1" from="449" to="200" dur="1.8s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="x2" from="451" to="700" dur="1.8s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="stroke-width" values="1;1.8;3.5;6" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0;0.95;0.85;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+    <animate attributeName="x1" from="449" to="0"   dur="1.8s" begin="0.9s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="0.9s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x2" from="451" to="900" dur="1.8s" begin="0.9s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="0.9s"  repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="stroke-width" values="1;2;4.5;7" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.9;0.8;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
   </line>
   <line stroke="#FF33DD" stroke-opacity="0">
-    <animate attributeName="x1" from="449" to="200" dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x1" from="449" to="0"   dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
     <animate attributeName="y1" from="302" to="520" dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="x2" from="451" to="700" dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
+    <animate attributeName="x2" from="451" to="900" dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
     <animate attributeName="y2" from="302" to="520" dur="1.8s" begin="1.35s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.9 1"/>
-    <animate attributeName="stroke-width" values="1;1.8;3.5;6" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-opacity" values="0;0.95;0.85;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="1;2;4.5;7" keyTimes="0;0.2;0.7;1" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0;0.9;0.8;0" keyTimes="0;0.08;0.8;1" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
   </line>
+
+  <!-- ── 4. PROMINENT NEON SIDE STRIPES (SADECE YANLARI NEON ŞERİT) ── -->
+  <!-- Left Side Road Neon Stripe (Horizon to bottom-left corner with cyan laser glow) -->
+  <line x1="450" y1="302" x2="0" y2="520" stroke="#00F0FF" stroke-width="8" opacity="0.6" filter="url(#f2)"/>
+  <line x1="450" y1="302" x2="0" y2="520" stroke="#00FFFF" stroke-width="3.5" opacity="0.95" filter="url(#f1)"/>
+  <line x1="450" y1="302" x2="0" y2="520" stroke="#FFFFFF" stroke-width="1.5" opacity="1"/>
+
+  <!-- Right Side Road Neon Stripe (Horizon to bottom-right corner with cyan laser glow) -->
+  <line x1="450" y1="302" x2="900" y2="520" stroke="#00F0FF" stroke-width="8" opacity="0.6" filter="url(#f2)"/>
+  <line x1="450" y1="302" x2="900" y2="520" stroke="#00FFFF" stroke-width="3.5" opacity="0.95" filter="url(#f1)"/>
+  <line x1="450" y1="302" x2="900" y2="520" stroke="#FFFFFF" stroke-width="1.5" opacity="1"/>
 
 </g>
 
